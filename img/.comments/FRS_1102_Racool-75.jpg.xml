@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comment version="3.0">
+  <caption>Psychologist</caption>
+  <note>Session with a psychologist</note>
+  <place/>
+  <categories>
+    <category value="Adult"/>
+    <category value="Couch"/>
+    <category value="Listening"/>
+    <category value="Support"/>
+    <category value="Talking"/>
+    <category value="abuse"/>
+    <category value="advice"/>
+    <category value="analysis"/>
+    <category value="consultation"/>
+    <category value="counseling"/>
+    <category value="counselor"/>
+    <category value="depressed"/>
+    <category value="depression"/>
+    <category value="diagnosis"/>
+    <category value="discussion"/>
+    <category value="doctor"/>
+    <category value="female"/>
+    <category value="health"/>
+    <category value="healthcare"/>
+    <category value="help"/>
+    <category value="illness"/>
+    <category value="listener"/>
+    <category value="male"/>
+    <category value="man"/>
+    <category value="medical"/>
+    <category value="medicine"/>
+    <category value="mental"/>
+    <category value="notes"/>
+    <category value="patient"/>
+    <category value="people"/>
+    <category value="problem"/>
+    <category value="professional"/>
+    <category value="psychiatrist"/>
+    <category value="psychiatry"/>
+    <category value="psychological"/>
+    <category value="psychologist"/>
+    <category value="psychology"/>
+    <category value="psychotherapist"/>
+    <category value="psychotherapy"/>
+    <category value="session"/>
+    <category value="shame"/>
+    <category value="sofa"/>
+    <category value="stress"/>
+    <category value="talk"/>
+    <category value="therapist"/>
+    <category value="therapy"/>
+    <category value="treatment"/>
+    <category value="violence"/>
+    <category value="visit"/>
+    <category value="woman"/>
+  </categories>
+</comment>
