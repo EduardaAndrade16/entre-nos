@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EntreNos - Voluntarios</title>
-  <meta name="description" content="Learn about Nexora's mission, team and values — a senior product, design and engineering studio for SaaS and tech companies.">
+  <title>EntreNós - Perfil dos Voluntários</title>
+  <meta name="description" content="Conheça a rede de voluntários do EntreNós, um espaço de escuta, acolhimento e apoio à saúde mental. Encontre informações sobre os perfis e acesse o agendamento.">
   <link rel="icon" type="image/png" href="img/logoEntreNos.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,28 +12,188 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
-</head>
-<body>
+  <style>
+    .pagina-voluntarios {
+      --bs-primary: #554378;
+      --bs-primary-rgb: 85, 67, 120;
+      --n-shadow-primary: 0 12px 28px rgba(85, 67, 120, 0.20);
+      color: var(--n-navy);
+      background-color: var(--n-bg);
+    }
 
-    <!-- NAVBAR -->
-   <nav class="navbar navbar-expand-lg navbar-nexora fixed-top">
+    .pagina-voluntarios .atalho-conteudo {
+      position: fixed;
+      top: 0.5rem;
+      left: 0.5rem;
+      z-index: 1100;
+      padding: 0.75rem 1rem;
+      color: var(--n-primary);
+      background: var(--n-white);
+      border-radius: var(--n-radius-sm);
+    }
+
+    .pagina-voluntarios a:focus-visible,
+    .pagina-voluntarios button:focus-visible,
+    .pagina-voluntarios select:focus-visible {
+      outline: 3px solid var(--n-secondary);
+      outline-offset: 3px;
+    }
+
+    .pagina-voluntarios .form-select:focus {
+      border-color: var(--n-secondary);
+      box-shadow: 0 0 0 0.25rem rgba(139, 122, 184, 0.20);
+    }
+
+    .pagina-voluntarios .navbar-nexora {
+      background: var(--n-white);
+    }
+
+    .pagina-voluntarios .navbar-nexora .nav-link {
+      color: var(--n-primary) !important;
+      padding-right: 0.75rem !important;
+      padding-left: 0.75rem !important;
+    }
+
+    .pagina-voluntarios .navbar-nexora .nav-link:hover,
+    .pagina-voluntarios .navbar-nexora .nav-link.active {
+      color: var(--n-primary) !important;
+      background: var(--n-slate-light);
+    }
+
+    .pagina-voluntarios .page-header {
+      padding-top: 10rem;
+    }
+
+    .pagina-voluntarios .page-header::before,
+    .pagina-voluntarios .cta-section::before {
+      background: radial-gradient(circle, rgba(139, 122, 184, 0.30) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .pagina-voluntarios .breadcrumb-custom,
+    .pagina-voluntarios .breadcrumb-custom a,
+    .pagina-voluntarios .breadcrumb-custom .active {
+      color: var(--n-slate-light);
+    }
+
+    .pagina-voluntarios .breadcrumb-custom a:hover {
+      color: var(--n-white);
+    }
+
+    .pagina-voluntarios .section-title,
+    .pagina-voluntarios .card-title {
+      color: var(--n-primary);
+    }
+
+    .pagina-voluntarios .btn-primary {
+      background: var(--n-primary);
+      color: var(--n-white);
+      --bs-btn-focus-shadow-rgb: 139, 122, 184;
+    }
+
+    .pagina-voluntarios .btn-primary:hover {
+      box-shadow: 0 16px 32px rgba(85, 67, 120, 0.28);
+    }
+
+    .pagina-voluntarios .icon-box-secondary {
+      background: var(--n-slate-light);
+      color: var(--n-primary);
+    }
+
+    .pagina-voluntarios .icon-box-success {
+      background: var(--n-bg-alt);
+      color: var(--n-primary);
+    }
+
+    .pagina-voluntarios .acolhimento-card {
+      background: var(--n-gradient-soft);
+    }
+
+    .pagina-voluntarios .acolhimento-card > .icon-box {
+      background: #F5C96A;
+      color: var(--n-primary);
+    }
+
+    .pagina-voluntarios .voluntario-foto {
+      width: 112px;
+      height: 112px;
+      object-fit: cover;
+      background: var(--n-slate-light);
+    }
+
+    .pagina-voluntarios #perfis {
+      scroll-margin-top: 130px;
+    }
+
+    .pagina-voluntarios .perfil-detalhes {
+      border-top: 1px solid var(--n-border);
+      padding-top: 1rem;
+    }
+
+    .pagina-voluntarios .perfil-detalhes dt {
+      color: var(--n-primary);
+      font-weight: 600;
+    }
+
+    .pagina-voluntarios .perfil-detalhes dd {
+      color: var(--n-slate);
+    }
+
+    .pagina-voluntarios .cta-section p {
+      color: var(--n-slate-light);
+    }
+
+    .pagina-voluntarios .cta-section .btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pagina-voluntarios .footer-nexora .social-icon {
+      display: flex;
+    }
+
+    @media (max-width: 1199.98px) {
+      .pagina-voluntarios .navbar-collapse {
+        max-height: calc(100dvh - 124px);
+        overflow-y: auto;
+      }
+    }
+  </style>
+  <noscript>
+    <style>
+      .pagina-voluntarios .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .pagina-voluntarios .filtro-voluntarios {
+        display: none;
+      }
+    </style>
+  </noscript>
+</head>
+<body class="pagina-voluntarios">
+
+  <a href="#conteudo" class="visually-hidden-focusable atalho-conteudo">Ir para o conteúdo</a>
+
+  <nav class="navbar navbar-expand-xl navbar-nexora fixed-top">
     <div class="container">
-      <a class="navbar-brand navbar-brand-custom" href="index.html" aria-label="Entre Nós home">
+      <a class="navbar-brand navbar-brand-custom" href="index.html" aria-label="EntreNós - Página inicial">
         <img src="img/logoEntreNos.png" alt="Entre Nós" class="navbar-logo">
       </a>
-      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir ou fechar menu">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-1 mt-3 mt-lg-0">
+        <ul class="navbar-nav ms-auto align-items-xl-center gap-1 mt-3 mt-xl-0">
           <li class="nav-item"><a class="nav-link nav2" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link nav2" href="voluntarios.html">Voluntários</a></li>
+          <li class="nav-item"><a class="nav-link nav2 active" href="voluntarios.html" aria-current="page">Voluntários</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="voluntarioscadastro.html">Participe</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="agendamento.html">Agendamento</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="faq.html">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link nav2 active" href="suporte.html">Suporte</a></li>
-          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <li class="nav-item"><a class="nav-link nav2" href="suporte.html">Suporte</a></li>
+          <li class="nav-item ms-xl-2 mt-2 mt-xl-0">
             <a href="cadastro.html" class="btn btn-primary btn-sm-custom w-100">Cadastre-se aqui!</a>
           </li>
           <li class="nav-item"><a class="nav-link nav2" href="login.html">Login</a></li>
@@ -42,168 +202,302 @@
     </div>
   </nav>
 
-  <!-- PAGE HEADER -->
   <header class="page-header">
     <div class="container">
-      <h1 class="mb-3">About Nexora</h1>
-      <div class="breadcrumb-custom">
-        <a href="index.html">Home</a> <span>/</span> <span class="active">About</span>
+      <h1 class="mb-3">Perfil dos Voluntários</h1>
+      <div class="breadcrumb-custom" aria-label="Localização na página">
+        <a href="index.html">Home</a> <span aria-hidden="true">/</span> <span class="active" aria-current="page">Voluntários</span>
       </div>
     </div>
   </header>
 
-  <!-- STORY -->
-  <section class="section">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6 reveal">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&h=560&fit=crop" class="rounded-img w-100" alt="Nexora studio workspace" style="aspect-ratio:5/4; object-fit:cover;">
-        </div>
-        <div class="col-lg-6 reveal">
-          <span class="eyebrow">Our story</span>
-          <h2 class="section-title">Founded by operators, built for operators</h2>
-          <p class="section-subtitle mb-3">Nexora started in 2014 when three product leads, frustrated with slow agency turnaround, decided to build the studio they wished they could hire. Over a decade later, we've shipped products for fintech, healthtech and B2B SaaS companies across 34 countries.</p>
-          <p class="mb-4">Today our team of 42 designers, engineers and strategists works in small, senior pods — each dedicated to two or three clients at a time so quality never slips.</p>
-          <div class="row g-3">
-            <div class="col-6">
-              <div class="d-flex align-items-center gap-3">
-                <div class="icon-box icon-box-primary"><i class="bi bi-calendar-check"></i></div>
-                <div><strong class="text-navy d-block">Since 2014</strong><small class="text-slate">12 years operating</small></div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="d-flex align-items-center gap-3">
-                <div class="icon-box icon-box-success"><i class="bi bi-globe"></i></div>
-                <div><strong class="text-navy d-block">Remote-first</strong><small class="text-slate">Across 9 timezones</small></div>
-              </div>
+  <main id="conteudo" tabindex="-1">
+    <section class="section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal">
+            <span class="eyebrow">Nossa rede de apoio</span>
+            <h2 class="section-title">Pessoas que dedicam tempo para ouvir e acolher</h2>
+            <p class="section-subtitle mb-3">No EntreNós, cada pessoa tem espaço para falar sobre o que sente. Os voluntários fazem parte dessa rede de apoio à saúde mental, contribuindo com escuta, acolhimento e cuidado.</p>
+            <p class="mb-4">Profissionais, estudantes e pessoas com vontade de ajudar podem participar, cada um dentro da sua área de atuação. Conheça os perfis e encontre o apoio que faz sentido para você.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#perfis" class="btn btn-primary">Conhecer os perfis <i class="bi bi-arrow-down ms-1" aria-hidden="true"></i></a>
+              <a href="agendamento.html" class="btn btn-light-custom">Agendar atendimento</a>
             </div>
           </div>
+          <div class="col-lg-6 reveal">
+            <div class="card-premium acolhimento-card">
+              <div class="icon-box icon-box-lg mb-4"><i class="bi bi-chat-heart" aria-hidden="true"></i></div>
+              <h2 class="section-title h3">Você não está sozinho(a).</h2>
+              <p class="mb-4">Entre nós, existe espaço para falar, ouvir, acolher e cuidar. O primeiro passo pode ser conhecer quem faz parte dessa rede.</p>
+              <ul class="list-check mb-0">
+                <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Conheça a apresentação e a área de atuação dos voluntários.</span></li>
+                <li><i class="bi bi-check-lg" aria-hidden="true"></i><span>Escolha o tipo de apoio que você procura.</span></li>
+                <li class="mb-0"><i class="bi bi-check-lg" aria-hidden="true"></i><span>Acesse o agendamento para escolher profissional, data e horário.</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MISSION / VALUES -->
-  <section class="section bg-soft">
-    <div class="container">
-      <div class="row section-header justify-content-center text-center">
-        <div class="col-lg-7 reveal">
-          <span class="eyebrow">What drives us</span>
-          <h2 class="section-title">The principles behind every engagement</h2>
+    <section class="section bg-white" id="perfis">
+      <div class="container">
+        <div class="row section-header justify-content-center text-center">
+          <div class="col-lg-8 reveal">
+            <span class="eyebrow">Conheça os perfis</span>
+            <h2 class="section-title">Uma rede feita de pessoas</h2>
+            <p class="section-subtitle mx-auto mb-3">Escuta, orientação e troca de experiências são algumas das formas de apoio presentes no EntreNós.</p>
+            <p class="small text-slate mb-0">Perfis, especializações e horários ilustrativos para demonstração do layout.</p>
+          </div>
         </div>
+        <div class="row align-items-end justify-content-between g-3 mb-4 filtro-voluntarios">
+          <div class="col-md-6 col-lg-4">
+            <label for="filtroVoluntarios" class="form-label">Tipo de apoio</label>
+            <select class="form-select" id="filtroVoluntarios" aria-controls="listaVoluntarios">
+              <option value="todos">Todos os perfis</option>
+              <option value="psicologia">Psicólogos</option>
+              <option value="terapia">Terapeutas</option>
+              <option value="grupo">Grupos de apoio</option>
+            </select>
+          </div>
+          <div class="col-md-auto">
+            <p class="small text-slate mb-0" id="quantidadePerfis" role="status" aria-live="polite">9 perfis encontrados</p>
+          </div>
+        </div>
+        <div class="row g-4 justify-content-center" id="listaVoluntarios">
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="psicologia">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario1">
+              <img src="img/ana silva.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Foto de Ana Silva">
+              <h3 class="card-title" id="voluntario1">Ana Silva</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Psicóloga Clínica</p>
+              <p class="small mb-4">Psicóloga clínica com foco em transtornos de humor. Sua atuação considera a relação entre rotinas diárias, vínculos e emoções, a partir da Terapia Interpessoal e de Ritmo Social.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Especialização</dt>
+                <dd class="mb-3">Transtornos de humor e Terapia Interpessoal e de Ritmo Social (IPSRT)</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Segundas e quartas, às 09h e 11h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Atendimento individual online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=ana-silva#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="psicologia">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario2">
+              <img src="img/Beatriz-carvalho.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Foto de Beatriz Carvalho">
+              <h3 class="card-title" id="voluntario2">Beatriz Carvalho</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Psicóloga Clínica</p>
+              <p class="small mb-4">Oferece escuta acolhedora com foco no Transtorno do Espectro Autista e em demandas do neurodesenvolvimento. Trabalha com Terapia Cognitivo-Comportamental e desenvolvimento de habilidades.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Especialização</dt>
+                <dd class="mb-3">Transtorno do Espectro Autista (TEA) e Terapia Cognitivo-Comportamental (TCC)</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Terças e quintas, às 10h e 14h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Atendimento individual online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=beatriz-carvalho#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="psicologia">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario3">
+              <img src="img/marcelo-de-oliveira.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Foto de Marcelo de Oliveira">
+              <h3 class="card-title" id="voluntario3">Marcelo de Oliveira</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Psicólogo Clínico</p>
+              <p class="small mb-4">Trabalha com relacionamentos, comunicação e dinâmicas familiares por meio da terapia sistêmica. Acolhe casais e indivíduos em suas dificuldades e processos de desenvolvimento pessoal.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Especialização</dt>
+                <dd class="mb-3">Terapia sistêmica, terapia de casal e conflitos familiares</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Segundas e sextas, às 13h e 16h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Atendimento individual e de casal online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=marcelo-de-oliveira#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="terapia">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario4">
+              <img src="img/hiroshi-tanaka.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Foto de Hiroshi Tanaka">
+              <h3 class="card-title" id="voluntario4">Hiroshi Tanaka</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Terapeuta Freudiano</p>
+              <p class="small mb-4">Dedica-se à escuta e à exploração de sonhos, memórias e padrões de comportamento. Sua abordagem freudiana propõe um espaço de reflexão sobre o inconsciente e os conflitos internos.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Especialização</dt>
+                <dd class="mb-3">Psicanálise freudiana, sonhos e conflitos internos</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Terças e quintas, às 09h e 15h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Atendimento individual online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=hiroshi-tanaka#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="terapia">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario5">
+              <img src="img/sofia-medeiros.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Foto de Sofia Medeiros">
+              <h3 class="card-title" id="voluntario5">Sofia Medeiros</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Terapeuta Lacaniana</p>
+              <p class="small mb-4">Oferece um espaço de escuta e reflexão orientado pela psicanálise lacaniana. Sua atuação aborda a fala, o desejo e as experiências singulares de cada pessoa.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Especialização</dt>
+                <dd class="mb-3">Psicanálise lacaniana, linguagem e subjetividade</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Segundas e quartas, às 14h e 17h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Atendimento individual online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=sofia-medeiros#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="terapia">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario6">
+              <img src="img/Elara-Silva.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Foto de Elara Silva">
+              <h3 class="card-title" id="voluntario6">Elara Silva</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Terapeuta Junguiana</p>
+              <p class="small mb-4">Trabalha com psicologia analítica, explorando sonhos, símbolos e arquétipos. Sua abordagem junguiana é voltada ao autoconhecimento e ao processo de individuação.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Especialização</dt>
+                <dd class="mb-3">Psicologia analítica, sonhos e individuação</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Quartas e sextas, às 10h e 16h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Atendimento individual online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=elara-silva#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="grupo">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario7">
+              <img src="img/Grupo-Acolher(1).png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Imagem do grupo Grupo Acolher">
+              <h3 class="card-title" id="voluntario7">Grupo Acolher</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Grupo de Apoio Mútuo</p>
+              <p class="small mb-4">Um espaço de apoio mútuo para compartilhar vivências relacionadas ao luto, às perdas e aos desafios nos relacionamentos, com acolhimento e troca de experiências.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Foco do grupo</dt>
+                <dd class="mb-3">Luto, perdas e relacionamentos</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Encontros semanais, às quartas, às 15h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Encontros em grupo online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=grupo-acolher#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="grupo">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario8">
+              <img src="img/Mentes-em-Equilíbrio.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Imagem do grupo Mentes em Equilíbrio">
+              <h3 class="card-title" id="voluntario8">Mentes em Equilíbrio</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Grupo de Apoio à Saúde Mental</p>
+              <p class="small mb-4">Reúne pessoas que buscam apoio para lidar com ansiedade, depressão e estresse. Os encontros abordam autocuidado, bem-estar e construção de uma rede de apoio.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Foco do grupo</dt>
+                <dd class="mb-3">Ansiedade, depressão, estresse e autocuidado</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Encontros quinzenais, às quintas, às 16h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Encontros em grupo online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=mentes-em-equilibrio#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal" data-tipo="grupo">
+            <article class="card-premium d-flex flex-column text-center" aria-labelledby="voluntario9">
+              <img src="img/Caminhos-da-Autodescoberta.png" class="voluntario-foto rounded-circle mx-auto mb-3" width="112" height="112" loading="lazy" decoding="async" alt="Imagem do grupo Caminhos da Autodescoberta">
+              <h3 class="card-title" id="voluntario9">Caminhos da Autodescoberta</h3>
+              <p class="text-primary-custom fw-semibold mb-3">Grupo de Desenvolvimento Pessoal</p>
+              <p class="small mb-4">Um grupo para refletir sobre propósito, transições de vida e desenvolvimento pessoal. Promove discussões e oficinas sobre autoconhecimento e habilidades sociais.</p>
+              <dl class="perfil-detalhes small text-start mb-4">
+                <dt>Foco do grupo</dt>
+                <dd class="mb-3">Autoconhecimento, propósito e transições de vida</dd>
+                <dt>Disponibilidade</dt>
+                <dd class="mb-3">Encontros mensais, na primeira sexta-feira do mês, às 14h.</dd>
+                <dt>Modalidade</dt>
+                <dd class="mb-0">Oficinas e discussões em grupo online</dd>
+              </dl>
+              <a href="agendamento.html?voluntario=caminhos-da-autodescoberta#agendamento" class="btn btn-primary mt-auto">Ver agendamento <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </article>
+          </div>
+        </div>
+        <p class="small text-slate text-center mt-4 mb-0">O acolhimento voluntário complementa a rede de apoio e não substitui o atendimento com um profissional. Cada participante atua dentro das suas competências.</p>
       </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-bullseye"></i></div>
-            <h3 class="card-title">Outcomes over output</h3>
-            <p>We measure success in business impact, not hours logged or pages shipped.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <div class="icon-box icon-box-secondary mx-auto mb-3"><i class="bi bi-chat-square-text"></i></div>
-            <h3 class="card-title">Radical transparency</h3>
-            <p>Shared boards, honest timelines, and direct access to the people doing the work.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <div class="icon-box icon-box-success mx-auto mb-3"><i class="bi bi-gem"></i></div>
-            <h3 class="card-title">Craft as a default</h3>
-            <p>Every detail — copy, spacing, micro-interaction — is treated as part of the product.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-arrow-repeat"></i></div>
-            <h3 class="card-title">Built to evolve</h3>
-            <p>We design systems and codebases that your internal team can extend long after launch.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- TEAM -->
-  <section class="section">
-    <div class="container">
-      <div class="row section-header justify-content-center text-center">
-        <div class="col-lg-7 reveal">
-          <span class="eyebrow">Leadership</span>
-          <h2 class="section-title">Meet the people steering the ship</h2>
-        </div>
-      </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <img src="https://i.pravatar.cc/160?img=8" class="rounded-circle mb-3" style="width:96px;height:96px;object-fit:cover;" alt="Daniel Hwang, CEO">
-            <h3 class="card-title">Daniel Hwang</h3>
-            <p class="text-primary-custom fw-semibold mb-2">CEO &amp; Co-Founder</p>
-            <p class="small">Formerly led product at two YC-backed startups before founding Nexora.</p>
+    <section class="section">
+      <div class="container">
+        <div class="row section-header justify-content-center text-center">
+          <div class="col-lg-7 reveal">
+            <span class="eyebrow">O que nos aproxima</span>
+            <h2 class="section-title">Cuidado que começa na forma de acolher</h2>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <img src="https://i.pravatar.cc/160?img=47" class="rounded-circle mb-3" style="width:96px;height:96px;object-fit:cover;" alt="Priya Nair, Head of Design">
-            <h3 class="card-title">Priya Nair</h3>
-            <p class="text-primary-custom fw-semibold mb-2">Head of Design</p>
-            <p class="small">Leads the design system practice and a team of 14 product designers.</p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="card-premium text-center">
+              <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-ear" aria-hidden="true"></i></div>
+              <h3 class="card-title">Escuta</h3>
+              <p class="mb-0">Dar espaço para que cada pessoa fale sobre seus sentimentos no seu próprio ritmo.</p>
+            </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <img src="https://i.pravatar.cc/160?img=52" class="rounded-circle mb-3" style="width:96px;height:96px;object-fit:cover;" alt="Marcus Lee, Head of Engineering">
-            <h3 class="card-title">Marcus Lee</h3>
-            <p class="text-primary-custom fw-semibold mb-2">Head of Engineering</p>
-            <p class="small">Oversees architecture and DevOps across all active client builds.</p>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="card-premium text-center">
+              <div class="icon-box icon-box-secondary mx-auto mb-3"><i class="bi bi-heart" aria-hidden="true"></i></div>
+              <h3 class="card-title">Empatia</h3>
+              <p class="mb-0">Acolher diferentes histórias e reconhecer a importância do que cada pessoa sente.</p>
+            </div>
           </div>
-        </div>
-        <div class="col-md-6 col-lg-3 reveal">
-          <div class="card-premium text-center">
-            <img src="https://i.pravatar.cc/160?img=25" class="rounded-circle mb-3" style="width:96px;height:96px;object-fit:cover;" alt="Anna Kowalski, Client Success Lead">
-            <h3 class="card-title">Anna Kowalski</h3>
-            <p class="text-primary-custom fw-semibold mb-2">Client Success Lead</p>
-            <p class="small">Your main point of contact — keeps every engagement on track.</p>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="card-premium text-center">
+              <div class="icon-box icon-box-success mx-auto mb-3"><i class="bi bi-people" aria-hidden="true"></i></div>
+              <h3 class="card-title">Respeito</h3>
+              <p class="mb-0">Valorizar as diferenças, as escolhas e os limites de quem procura apoio.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="card-premium text-center">
+              <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-person-check" aria-hidden="true"></i></div>
+              <h3 class="card-title">Compromisso</h3>
+              <p class="mb-0">Contribuir dentro da própria área de atuação, reconhecendo os limites de cada forma de apoio.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA -->
-  <section class="section pt-0">
-    <div class="container">
-      <div class="cta-section reveal">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <h2 class="mb-2">Want to work with us?</h2>
-            <p class="mb-0 fs-5">We're currently accepting 3 new partners for Q3 2026.</p>
-          </div>
-          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-            <a href="contact.html" class="btn btn-primary btn-lg-custom">Get in Touch <i class="bi bi-arrow-right ms-1"></i></a>
+    <section class="section pt-0">
+      <div class="container">
+        <div class="cta-section reveal">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="mb-2">Faça parte dessa rede de apoio</h2>
+              <p class="mb-0 fs-5">Tem 18 anos ou mais e vontade de ajudar? Com ou sem especialização, você pode enviar sua inscrição para a equipe do EntreNós.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+              <a href="voluntarioscadastro.html" class="btn btn-light-custom btn-lg-custom">Quero ser voluntário <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer class="footer-nexora">
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6">
-          <a class="navbar-brand-custom d-inline-block mb-3" href="index.html" aria-label="Entre Nós home" style="color:#fff !important;">
+          <a class="navbar-brand-custom d-inline-block mb-3" href="index.html" aria-label="EntreNós - Página inicial" style="color:#fff !important;">
             <img src="img/logoEntreNos.png" alt="Entre Nós" class="navbar-logo">
           </a>
           <p class="text-white-50 mb-4" style="max-width:320px;">Entre nós, existe espaço para falar, ouvir, acolher e cuidar.</p>
           <div class="d-flex gap-2">
-            <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-            <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="social-icon"><i class="bi bi-dribbble"></i></a>
-            <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="X"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            <a href="#" class="social-icon" aria-label="Dribbble"><i class="bi bi-dribbble" aria-hidden="true"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
           <h6>Navegação</h6>
           <a href="index.html">Home</a>
           <a href="voluntarios.html">Voluntários</a>
@@ -212,12 +506,12 @@
           <a href="faq.html">FAQ</a>
           <a href="suporte.html">Suporte</a>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-2 col-md-6">
           <h6>Conta</h6>
           <a href="cadastro.html">Cadastre-se</a>
           <a href="login.html">Login</a>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-3 col-md-6">
           <h6>Acesso rápido</h6>
           <a href="suporte.html">Suporte</a>
           <a href="faq.html">FAQ</a>
@@ -230,9 +524,39 @@
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+  <button class="back-to-top" type="button" aria-label="Voltar ao topo"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const atalho = document.querySelector('.atalho-conteudo');
+      const conteudo = document.getElementById('conteudo');
+
+      atalho.addEventListener('click', function () {
+        conteudo.focus({ preventScroll: true });
+      });
+
+      const filtro = document.getElementById('filtroVoluntarios');
+      const perfis = document.querySelectorAll('#listaVoluntarios [data-tipo]');
+      const quantidade = document.getElementById('quantidadePerfis');
+
+      filtro.addEventListener('change', function () {
+        let total = 0;
+
+        perfis.forEach(function (perfil) {
+          const mostrar = filtro.value === 'todos' || perfil.dataset.tipo === filtro.value;
+          perfil.hidden = !mostrar;
+
+          if (mostrar) {
+            perfil.classList.add('is-visible');
+            total++;
+          }
+        });
+
+        quantidade.textContent = total === 1 ? '1 perfil encontrado' : total + ' perfis encontrados';
+      });
+    });
+  </script>
 </body>
 </html>
