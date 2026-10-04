@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EntreNos - Suporte</title>
-  <meta name="description" content="Get in touch with the Nexora team — start a project, ask a question, or book a free strategy call.">
+  <meta name="description" content="Fale com a equipe EntreNós e inscreva-se para ser voluntário na nossa plataforma de apoio à saúde mental.">
   <link rel="icon" type="image/png" href="img/logoEntreNos.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,13 +26,13 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-1 mt-3 mt-lg-0">
-          <li class="nav-item"><a class="nav-link nav2 active"  href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav2" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="voluntarios.html">Voluntários</a></li>
-          <li class="nav-item"><a class="nav-link nav2" href="voluntarioscadastro.html">Voluntarie-se</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="agendamento.html">Agendamento</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="faq.html">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link nav2" href="suporte.html">Suporte</a></li>
+          <li class="nav-item"><a class="nav-link nav2 active" href="suporte.html">Suporte</a></li>
+          <li class="nav-item"><a class="nav-link nav2" href="contato.html">Contato</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
             <a href="cadastro.html" class="btn btn-primary btn-sm-custom w-100">Cadastre-se aqui!</a>
           </li>
@@ -44,49 +44,21 @@
 
   <header class="page-header">
     <div class="container">
-      <h1 class="mb-3">Get In Touch</h1>
+      <h1 class="mb-3">Suporte</h1>
       <div class="breadcrumb-custom">
-        <a href="index.html">Home</a> <span>/</span> <span class="active">Contact</span>
+        <a href="index.html">Home</a> <span>/</span> <span class="active">Suporte</span>
       </div>
     </div>
   </header>
 
-  <!-- CONTACT INFO CARDS -->
-  <section class="section pb-0">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4 reveal">
-          <div class="card-premium text-center">
-            <div class="icon-box icon-box-primary mx-auto mb-3"><i class="bi bi-geo-alt"></i></div>
-            <h3 class="card-title">Nos Visite</h3>
-            <p class="mb-0">Presidente Prudente<br>São Paulo</p>
-          </div>
-        </div>
-        <div class="col-md-4 reveal">
-          <div class="card-premium text-center">
-            <div class="icon-box icon-box-secondary mx-auto mb-3"><i class="bi bi-envelope"></i></div>
-            <h3 class="card-title">Email</h3>
-            <p class="mb-1">Consultas gerais:<br><a href="mailto:hello@nexora.com" class="text-primary-custom fw-semibold text-decoration-none">EntreNos@gmail.com</a></p>
-          </div>
-        </div>
-        <div class="col-md-4 reveal">
-          <div class="card-premium text-center">
-            <div class="icon-box icon-box-success mx-auto mb-3"><i class="bi bi-telephone"></i></div>
-            <h3 class="card-title">Telefone</h3>
-            <p class="mb-0">Segunda – Sexta, 9h – 18h<br><a href="#" class="text-primary-custom fw-semibold text-decoration-none">+55 (18) 1234-5678</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORM + MAP -->
   <section class="section">
     <div class="container">
-      <div class="row g-5 align-items-stretch">
+      <div class="row justify-content-center">
         <div class="col-lg-7 reveal">
-          <span class="eyebrow">Mande uma mensagem</span>
-          <h2 class="section-title mb-4">Quer ser um voluntário? Se inscreva</h2>
+          <div class="text-center">
+            <span class="eyebrow">Mande uma mensagem</span>
+            <h2 class="section-title mb-4">Quer ser um voluntário? Se inscreva</h2>
+          </div>
           <form class="needs-validation" novalidate>
             <div class="row g-3">
               <div class="col-md-6">
@@ -100,7 +72,7 @@
                 <div class="invalid-feedback">Por favor, insira um email válido.</div>
               </div>
               <div class="col-md-6">
-                <label class="form-label" for="budget">Possui especialização em alguma área?</label>
+                <label class="form-label" for="esp">Possui especialização em alguma área?</label>
                 <select class="form-select" id="esp" required>
                   <option value="" selected disabled>Selecione uma opção</option>
                   <option>Sim</option>
@@ -121,81 +93,23 @@
               </div>
               <div class="col-12">
                 <label class="form-label" for="message">Descrição dos motivos de escolha e objetivos</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Nos diga sobre seus motivos de escolha, objetivos e outras informações que deveriamos saber." required></textarea>
+                <textarea class="form-control" id="message" rows="5" placeholder="Nos diga sobre seus motivos de escolha, objetivos e outras informações que deveríamos saber." required></textarea>
                 <div class="invalid-feedback">Por favor, compartilhe algum detalhe conosco.</div>
               </div>
               <div class="col-12">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="agreeTerms" required>
                   <label class="form-check-label small text-slate" for="agreeTerms">
-                    Eu concordo com a <a href="#" class="text-primary-custom">Política de Privacidade</a> e consento em ser contatado sobre minha consulta.
+                    Eu concordo com a <a href="#" class="text-primary-custom">Política de Privacidade</a> e consinto em ser contatado sobre minha consulta.
                   </label>
                   <div class="invalid-feedback">Você deve concordar antes de enviar.</div>
                 </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg-custom">Mandar soliticação <i class="bi bi-send ms-1"></i></button>
+                <button type="submit" class="btn btn-primary btn-lg-custom">Mandar solicitação <i class="bi bi-send ms-1"></i></button>
               </div>
             </div>
           </form>
-        </div>
-
-        <div class="col-lg-5 reveal">
-          <div class="map-frame mb-4">
-            <iframe src="https://www.google.com/maps?q=San+Francisco&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Nexora office location map"></iframe>
-          </div>
-          <div class="widget bg-gradient-dark text-white border-0">
-            <div class="icon-box icon-box-white mb-3"><i class="bi bi-clock"></i></div>
-            <h5 class="text-white mb-3">Office Hours</h5>
-            <ul class="widget-link-list" style="--n-border: rgba(255,255,255,0.1);">
-              <li style="border-color: rgba(255,255,255,0.1); color:#fff;">Monday – Friday <span style="color:rgba(255,255,255,0.6);">9:00 AM – 6:00 PM</span></li>
-              <li style="border-color: rgba(255,255,255,0.1); color:#fff;">Saturday <span style="color:rgba(255,255,255,0.6);">10:00 AM – 2:00 PM</span></li>
-              <li style="border-color: rgba(255,255,255,0.1); color:#fff;">Sunday <span style="color:rgba(255,255,255,0.6);">Closed</span></li>
-            </ul>
-            <p class="text-white-50 small mt-3 mb-0">All times Pacific Standard Time (PST).</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section bg-soft">
-    <div class="container">
-      <div class="row section-header justify-content-center text-center">
-        <div class="col-lg-7 reveal">
-          <span class="eyebrow">Before you reach out</span>
-          <h2 class="section-title">Quick answers</h2>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-8 reveal">
-          <div class="accordion accordion-custom" id="contactFaq">
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1">How soon will I hear back?</button>
-              </h2>
-              <div id="cfaq1" class="accordion-collapse collapse show" data-bs-parent="#contactFaq">
-                <div class="accordion-body">We respond to all inquiries within one business day, usually much sooner.</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2">Do I need a fully scoped brief?</button>
-              </h2>
-              <div id="cfaq2" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
-                <div class="accordion-body">Not at all — a rough idea is enough to start. We'll help you scope the rest during a free discovery call.</div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3">Can we sign an NDA before discussing details?</button>
-              </h2>
-              <div id="cfaq3" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
-                <div class="accordion-body">Yes, we're happy to sign your NDA — just mention it in your message and we'll send it over before our first call.</div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -243,7 +157,7 @@
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+  <button class="back-to-top" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
