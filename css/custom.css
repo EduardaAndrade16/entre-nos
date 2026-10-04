@@ -243,7 +243,7 @@ a { text-decoration: none; }
   font-family: var(--n-font-display);
   font-weight: 600;
   font-size: 0.95rem;
-  color: rgb(152, 119, 119) !important;
+  color:  var(--n-slate-light) !important;
   padding: 0.5rem 1.1rem !important;
   border-radius: var(--n-radius-sm);
   transition: all 0.2s ease;
@@ -293,7 +293,7 @@ a { text-decoration: none; }
    ===================================================== */
 .hero {
   position: relative;
-  padding-top: 9rem;
+  padding-top: 13rem;
   padding-bottom: 5rem;
   background: var(--n-gradient-soft);
   overflow: hidden;
@@ -777,23 +777,21 @@ a { text-decoration: none; }
 /* =====================================================
    PAGE HEADER (sub-pages)
    ===================================================== */
-.page-header {
-  background: var(--n-gradient-dark);
-  padding: 8rem 0 4rem;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+/* Navbar fixa */
+.navbar-nexora {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+    background: var(--n-primary-dark);
+    transition: all 0.3s ease;
 }
 
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: -120px;
-  right: -120px;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(21,94,239,0.25) 0%, transparent 70%);
+/* Navbar após a rolagem */
+.navbar-nexora.scrolled {
+    background: var(--n-primary-dark);
+    box-shadow: 0 2px 10px rgba(41, 38, 51, 0.08);
 }
 
 .page-header h1 { color: #fff; }
@@ -987,4 +985,80 @@ a { text-decoration: none; }
     padding: 1.5rem;
     border-radius: var(--n-radius-md);
   }
+}
+
+
+/* Ícones das redes sociais - Footer */
+
+.footer-nexora a.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+
+    padding: 0;
+    margin: 0 !important;
+
+    background: rgba(221, 213, 243, 0.10);
+    color: #DDD5F3 !important;
+
+    border-radius: 50%;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.footer-nexora a.social-icon i {
+    display: block;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Efeito ao passar o mouse */
+
+.footer-nexora a.social-icon:hover {
+    background: #8B7AB8;
+    color: #FFFFFF !important;
+    transform: translateY(-3px);
+}
+
+/* Acessibilidade */
+
+.footer-nexora a.social-icon:focus-visible {
+    outline: 2px solid #F5C96A;
+    outline-offset: 4px;
+}
+
+
+
+/* IMAGEM PRINCIPAL - HERO */
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(41, 38, 51, 0.10);
+}
+
+/* Responsividade */
+
+@media (max-width: 991.98px) {
+    .hero-image {
+        height: 350px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-image {
+        height: 280px;
+        border-radius: 18px;
+    }
 }
