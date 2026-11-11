@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EntreNós - Agendamento</title>
-  <meta name="description" content="Escolha um psicólogo, terapeuta ou grupo de apoio do EntreNós e consulte os horários de atendimento.">
+  <title>EntreNos - Agendamento</title>
+  <meta name="description" content="Agende seu atendimento no EntreNós e escolha um profissional disponível no horário que preferir.">
   <link rel="icon" type="image/png" href="img/logoEntreNos.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,104 +12,45 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
-  <style>
-    .pagina-agendamento {
-      --bs-primary: #554378;
-      --bs-primary-rgb: 85, 67, 120;
-      --n-shadow-primary: 0 12px 28px rgba(85, 67, 120, 0.20);
-    }
-
-    .pagina-agendamento .navbar-nexora {
-      background: var(--n-white);
-    }
-
-    .pagina-agendamento .navbar-nexora .nav-link {
-      color: var(--n-primary) !important;
-      padding-right: 0.75rem !important;
-      padding-left: 0.75rem !important;
-    }
-
-    .pagina-agendamento .navbar-nexora .nav-link:hover,
-    .pagina-agendamento .navbar-nexora .nav-link.active {
-      background: var(--n-slate-light);
-    }
-
-    .pagina-agendamento .page-header {
-      padding-top: 10rem;
-    }
-
-    .pagina-agendamento .page-header::before {
-      background: radial-gradient(circle, rgba(139, 122, 184, 0.30) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .pagina-agendamento .breadcrumb-custom,
-    .pagina-agendamento .breadcrumb-custom a,
-    .pagina-agendamento .breadcrumb-custom .active {
-      color: var(--n-slate-light);
-    }
-
-    .pagina-agendamento .btn-primary {
-      background: var(--n-primary);
-      --bs-btn-focus-shadow-rgb: 139, 122, 184;
-    }
-
-    .pagina-agendamento .btn-primary:hover {
-      box-shadow: 0 16px 32px rgba(85, 67, 120, 0.28);
-    }
-
-    .pagina-agendamento .form-control:focus,
-    .pagina-agendamento .form-select:focus {
-      border-color: var(--n-secondary);
-      box-shadow: 0 0 0 0.25rem rgba(139, 122, 184, 0.20);
-    }
-
-    .pagina-agendamento #agendamento {
-      scroll-margin-top: 130px;
-    }
-
-    @media (max-width: 1199.98px) {
-      .pagina-agendamento .navbar-collapse {
-        max-height: calc(100dvh - 124px);
-        overflow-y: auto;
-      }
-    }
-  </style>
-  <noscript>
-    <style>
-      .pagina-agendamento .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    </style>
-  </noscript>
 </head>
-<body class="pagina-agendamento">
+<body>
 
- <nav class="navbar navbar-expand-lg navbar-nexora fixed-top page-header">
+  <!-- NAVBAR -->
+   <nav class="navbar navbar-expand-lg navbar-nexora fixed-top">
     <div class="container">
-    <a class="navbar-brand navbar-brand-custom" href="index.html" aria-label="Entre Nós home">
+      <a class="navbar-brand navbar-brand-custom" href="index.html" aria-label="Entre Nós home">
         <img src="img/logoEntreNos.png" alt="Entre Nós" class="navbar-logo">
-      </a>      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      </a>
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
-      <div class="collapse navbar-collapse " id="mainNav">
+      <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-1 mt-3 mt-lg-0">
           <li class="nav-item"><a class="nav-link nav2" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="voluntarios.html">Voluntários</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="voluntarioscadastro.html">Participe</a></li>
-          <li class="nav-item"><a class="nav-link nav2 active" href="agendamento.html">Agendamento</a></li>
+          <li class="nav-item"><a class="nav-link nav2 active" aria-current="page" href="agendamento.html">Agendamento</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="faq.html">FAQ</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="suporte.html">Suporte</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a href="cadastro.html" class="btn btn-primary btn-sm-custom w-100">Cadastre-se aqui!</a>
+            <a href="cadastro.html" class="btn btn-primary btn-sm-custom w-100">Cadastro de usuário</a>
           </li>
           <li class="nav-item"><a class="nav-link nav2" href="login.html">Login</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  <header class="page-header">
+    <div class="container">
+      <h1 class="mb-3">Agendamento</h1>
+      <div class="breadcrumb-custom">
+        <a href="index.html">Home</a> <span>/</span> <span class="active">Agendamento</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- APPOINTMENT INTRO -->
   <section class="section pb-0">
     <div class="container">
       <div class="row justify-content-center text-center">
@@ -139,8 +80,8 @@
             <div class="mb-3">
               <i class="bi bi-person-heart fs-2"></i>
             </div>
-            <h5>2. Escolha o profissional ou grupo</h5>
-            <p class="text-slate mb-0">Encontre um profissional ou grupo de apoio para acompanhar você.</p>
+            <h5>2. Escolha o profissional</h5>
+            <p class="text-slate mb-0">Encontre um profissional para acompanhar você.</p>
           </div>
         </div>
 
@@ -157,31 +98,40 @@
     </div>
   </section>
 
-  <section class="section pt-5 appointment-form-section" id="agendamento">
+  <!-- APPOINTMENT FORM -->
+  <section class="section pt-5 appointment-form-section">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 reveal">
           <span class="eyebrow">Agende seu atendimento</span>
           <h2 class="section-title mb-2">Seu momento de cuidado começa aqui</h2>
           <p class="text-slate mb-4">
-            Preencha os dados abaixo e escolha um dos horários apresentados para o profissional ou grupo.
-            Os perfis e horários são ilustrativos para demonstração do layout.
+            Preencha os dados abaixo para realizar seu agendamento.
           </p>
 
-          <form class="needs-validation" novalidate>
+          <div class="alert alert-success d-none" id="appointmentSuccess" role="status"></div>
+
+          <form class="needs-validation" id="appointmentForm" novalidate>
             <div class="row g-3">
 
               <div class="col-md-6">
-                <label class="form-label" for="fullName">Nome completo</label>
+                <label class="form-label" for="fullName">Nome</label>
                 <input type="text" class="form-control" id="fullName"
-                       placeholder="Digite seu nome completo" required>
-                <div class="invalid-feedback">Informe seu nome completo.</div>
+                       placeholder="Digite seu primeiro nome" required>
+                <div class="invalid-feedback">Informe seu primeiro nome.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label" for="fullName">Sobrenome</label>
+                <input type="text" class="form-control" id="fullName"
+                       placeholder="Digite seu sobrenome" required>
+                <div class="invalid-feedback">Informe seu sobrenome.</div>
               </div>
 
               <div class="col-md-6">
                 <label class="form-label" for="email">E-mail</label>
                 <input type="email" class="form-control" id="email"
-                       placeholder="seuemail@exemplo.com" required>
+                       placeholder="Ex.: seuemail@exemplo.com" required>
                 <div class="invalid-feedback">Informe um e-mail válido.</div>
               </div>
 
@@ -192,41 +142,50 @@
                 <div class="invalid-feedback">Informe seu telefone.</div>
               </div>
 
+              <!--campos de endereço-->
+
+               <div class="col-md-6">
+                <label class="form-label" for="cep">CEP</label>
+                <input type="text" class="form-control" id="cep"
+                       placeholder="00000 - 000" required>
+                <div class="invalid-feedback">Informe seu CEP.</div>
+              </div>
+
+               <div class="col-md-6">
+                <label class="form-label" for="ender">Endereço</label>
+                <input type="text" class="form-control" id="end"
+                       placeholder="Ex.: Rua da felicidade" required>
+                <div class="invalid-feedback">Informe seu endereço.</div>
+              </div>
+
+               <div class="col-md-6">
+                <label class="form-label" for="num">Número</label>
+                <input type="text" class="form-control" id="num" placeholder="123" required>
+                <div class="invalid-feedback">Informe o número da sua residência.</div>
+              </div>
+
+               <div class="col-md-6">
+                <label class="form-label" for="city">Cidade</label>
+                <input type="text" class="form-control" id="city" placeholder="Nome da cidade" required>
+                <div class="invalid-feedback">Informe sua cidade.</div>
+              </div>
+
+               <div class="col-md-6">
+                <label class="form-label" for="state">Estado</label>
+                <input type="text" class="form-control" id="state" placeholder="Nome do estado" required>
+                <div class="invalid-feedback">Informe o seu estado.</div>
+              </div>
+
               <div class="col-md-6">
                 <label class="form-label" for="serviceType">Tipo de atendimento</label>
                 <select class="form-select" id="serviceType" required>
                   <option value="" selected disabled>Selecione uma opção</option>
-                  <option value="psicologia">Atendimento psicológico</option>
-                  <option value="terapia">Atendimento terapêutico</option>
-                  <option value="acolhimento">Orientação / acolhimento</option>
-                  <option value="grupo">Grupo de apoio</option>
-                  <option value="outro">Outro</option>
+                  <option>Atendimento psicológico</option>
+                  <option>Orientação / acolhimento</option>
+                  <option>Grupo de apoio</option>
+                  <option>Outro</option>
                 </select>
                 <div class="invalid-feedback">Selecione o tipo de atendimento.</div>
-              </div>
-
-              <div class="col-12">
-                <label class="form-label" for="professional">Profissional ou grupo de apoio</label>
-                <select class="form-select" id="professional" aria-describedby="availabilityHelp" required>
-                  <option value="" selected disabled>Selecione um profissional ou grupo</option>
-                  <optgroup label="Psicólogos">
-                    <option value="ana-silva" data-tipo="psicologia" data-horarios="09:00,11:00" data-disponibilidade="Segundas e quartas, às 09h e 11h.">Ana Silva</option>
-                    <option value="beatriz-carvalho" data-tipo="psicologia" data-horarios="10:00,14:00" data-disponibilidade="Terças e quintas, às 10h e 14h.">Beatriz Carvalho</option>
-                    <option value="marcelo-de-oliveira" data-tipo="psicologia" data-horarios="13:00,16:00" data-disponibilidade="Segundas e sextas, às 13h e 16h.">Marcelo de Oliveira</option>
-                  </optgroup>
-                  <optgroup label="Terapeutas">
-                    <option value="hiroshi-tanaka" data-tipo="terapia" data-horarios="09:00,15:00" data-disponibilidade="Terças e quintas, às 09h e 15h.">Hiroshi Tanaka</option>
-                    <option value="sofia-medeiros" data-tipo="terapia" data-horarios="14:00,17:00" data-disponibilidade="Segundas e quartas, às 14h e 17h.">Sofia Medeiros</option>
-                    <option value="elara-silva" data-tipo="terapia" data-horarios="10:00,16:00" data-disponibilidade="Quartas e sextas, às 10h e 16h.">Elara Silva</option>
-                  </optgroup>
-                  <optgroup label="Grupos de apoio">
-                    <option value="grupo-acolher" data-tipo="grupo" data-horarios="15:00" data-disponibilidade="Encontros semanais, às quartas, às 15h.">Grupo Acolher</option>
-                    <option value="mentes-em-equilibrio" data-tipo="grupo" data-horarios="16:00" data-disponibilidade="Encontros quinzenais, às quintas, às 16h.">Mentes em Equilíbrio</option>
-                    <option value="caminhos-da-autodescoberta" data-tipo="grupo" data-horarios="14:00" data-disponibilidade="Encontros mensais, na primeira sexta-feira do mês, às 14h.">Caminhos da Autodescoberta</option>
-                  </optgroup>
-                </select>
-                <div class="invalid-feedback">Selecione um profissional ou grupo de apoio.</div>
-                <p class="small text-slate mt-2 mb-0" id="availabilityHelp" aria-live="polite">Selecione um profissional ou grupo para consultar a disponibilidade.</p>
               </div>
 
               <div class="col-md-6">
@@ -239,6 +198,7 @@
                 <label class="form-label" for="appointmentTime">Horário</label>
                 <select class="form-select" id="appointmentTime" required>
                   <option value="" selected disabled>Selecione um horário</option>
+                  <option>08:00</option>
                   <option>09:00</option>
                   <option>10:00</option>
                   <option>11:00</option>
@@ -251,8 +211,25 @@
                 <div class="invalid-feedback">Selecione um horário.</div>
               </div>
 
+              <!-- PROFISSIONAIS DISPONÍVEIS -->
               <div class="col-12">
-                <label class="form-label" for="observations">Observações</label>
+                <span class="form-label d-block">Profissional</span>
+                <input type="hidden" id="professional" name="professional">
+
+                <div id="professionalsEmpty" class="feature-grid-item align-items-center">
+                  <div class="icon-box icon-box-primary"><i class="bi bi-calendar-event"></i></div>
+                  <p class="text-slate mb-0" id="professionalsEmptyText">
+                    Escolha a data e o horário para ver os profissionais disponíveis.
+                  </p>
+                </div>
+
+                <div class="row g-3" id="professionalsList" role="radiogroup" aria-label="Profissionais disponíveis"></div>
+
+                <div class="invalid-feedback" id="professionalFeedback">Selecione um profissional disponível.</div>
+              </div>
+
+              <div class="col-12">
+                <span class="form-label d-block">Observações</span>
                 <textarea class="form-control" id="observations" rows="5"
                   placeholder="Se desejar, conte brevemente algo que considera importante para o atendimento."></textarea>
               </div>
@@ -284,7 +261,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6">
-          <a class="navbar-brand-custom d-inline-block mb-3" href="index.html" aria-label="EntreNós - Página inicial" style="color:#fff !important;">
+          <a class="navbar-brand-custom d-inline-block mb-3" href="index.html" aria-label="Entre Nós home" style="color:#fff !important;">
             <img src="img/logoEntreNos.png" alt="Entre Nós" class="navbar-logo" style="height:42px; width:auto;">
           </a>
           <p class="text-white-50 mb-4" style="max-width:320px;">Entre nós, existe espaço para falar, ouvir, acolher e cuidar.</p>
@@ -322,109 +299,177 @@
     </div>
   </footer>
 
-  <button class="back-to-top" aria-label="Voltar ao topo"><i class="bi bi-arrow-up"></i></button>
+  <button class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/mascara.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const profissional = document.getElementById('professional');
-      const tipo = document.getElementById('serviceType');
-      const horario = document.getElementById('appointmentTime');
-      const disponibilidade = document.getElementById('availabilityHelp');
-      const formulario = profissional.closest('form');
-      const voluntario = new URLSearchParams(window.location.search).get('voluntario');
-      const opcoes = Array.from(profissional.querySelectorAll('option[data-tipo]'));
+  (function () {
+    // Voluntários de exemplo (mesmos da página Voluntários)
+    // dias: 0 = domingo ... 6 = sábado
+    const profissionais = [
+      {
+        id: 'daniel-hwang',
+        nome: 'Daniel Hwang',
+        funcao: 'Psicólogo voluntário',
+        foto: 'https://i.pravatar.cc/160?img=8',
+        atendimentos: ['Atendimento psicológico', 'Orientação / acolhimento'],
+        agenda: { 1: ['08:00', '09:00', '10:00', '11:00'], 3: ['08:00', '09:00', '10:00', '11:00'], 5: ['13:00', '14:00', '15:00'] }
+      },
+      {
+        id: 'priya-nair',
+        nome: 'Priya Nair',
+        funcao: 'Psicóloga voluntária',
+        foto: 'https://i.pravatar.cc/160?img=47',
+        atendimentos: ['Atendimento psicológico', 'Grupo de apoio'],
+        agenda: { 2: ['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00'], 4: ['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00'] }
+      },
+      {
+        id: 'marcus-lee',
+        nome: 'Marcus Lee',
+        funcao: 'Facilitador de grupos',
+        foto: 'https://i.pravatar.cc/160?img=52',
+        atendimentos: ['Grupo de apoio', 'Orientação / acolhimento', 'Outro'],
+        agenda: { 1: ['13:00', '14:00', '15:00', '16:00', '17:00'], 2: ['13:00', '14:00', '15:00', '16:00', '17:00'], 3: ['13:00', '14:00', '15:00', '16:00', '17:00'], 4: ['13:00', '14:00', '15:00', '16:00', '17:00'], 5: ['13:00', '14:00', '15:00', '16:00', '17:00'] }
+      },
+      {
+        id: 'anna-kowalski',
+        nome: 'Anna Kowalski',
+        funcao: 'Acolhimento e escuta',
+        foto: 'https://i.pravatar.cc/160?img=25',
+        atendimentos: ['Orientação / acolhimento', 'Atendimento psicológico', 'Outro'],
+        agenda: { 3: ['14:00', '15:00', '16:00'], 4: ['08:00', '09:00', '10:00'], 6: ['08:00', '09:00', '10:00', '11:00'] }
+      }
+    ];
 
-      function atualizarDisponibilidade() {
-        const selecionado = profissional.options[profissional.selectedIndex];
-        const permitido = selecionado && selecionado.value && selecionado.dataset.tipo === tipo.value;
-        horario.replaceChildren();
+    const form = document.getElementById('appointmentForm');
+    const dateInput = document.getElementById('appointmentDate');
+    const timeSelect = document.getElementById('appointmentTime');
+    const serviceSelect = document.getElementById('serviceType');
+    const hiddenProf = document.getElementById('professional');
+    const list = document.getElementById('professionalsList');
+    const empty = document.getElementById('professionalsEmpty');
+    const emptyText = document.getElementById('professionalsEmptyText');
+    const profFeedback = document.getElementById('professionalFeedback');
+    const success = document.getElementById('appointmentSuccess');
 
-        const orientacao = document.createElement('option');
-        orientacao.value = '';
-        orientacao.textContent = permitido ? 'Selecione um horário' : 'Selecione um profissional ou grupo primeiro';
-        orientacao.disabled = true;
-        orientacao.selected = true;
-        horario.appendChild(orientacao);
-        horario.disabled = !permitido;
+    // Não permite datas passadas
+    const hoje = new Date();
+    hoje.setMinutes(hoje.getMinutes() - hoje.getTimezoneOffset());
+    dateInput.min = hoje.toISOString().split('T')[0];
 
-        if (!permitido) {
-          profissional.value = '';
+    function diaDaSemana(valorData) {
+      const [a, m, d] = valorData.split('-').map(Number);
+      return new Date(a, m - 1, d).getDay(); // evita erro de fuso
+    }
 
-          if (!tipo.value) {
-            disponibilidade.textContent = 'Escolha o tipo de atendimento para visualizar os profissionais ou grupos da categoria.';
-          } else if (profissional.options.length === 1) {
-            disponibilidade.textContent = 'Nenhum profissional ou grupo cadastrado nesta categoria.';
-          } else {
-            disponibilidade.textContent = 'Selecione um profissional ou grupo para consultar a disponibilidade.';
-          }
+    function formatarData(valorData) {
+      const [a, m, d] = valorData.split('-');
+      return d + '/' + m + '/' + a;
+    }
 
-          return;
-        }
+    function mostrarVazio(texto) {
+      list.innerHTML = '';
+      empty.classList.remove('d-none');
+      emptyText.textContent = texto;
+    }
 
-        disponibilidade.textContent = 'Disponibilidade: ' + selecionado.dataset.disponibilidade;
+    function renderizar() {
+      const data = dateInput.value;
+      const hora = timeSelect.value;
+      const servico = serviceSelect.value;
+      const selecionadoAntes = hiddenProf.value;
 
-        selecionado.dataset.horarios.split(',').forEach(function (hora) {
-          const opcao = document.createElement('option');
-          opcao.value = hora;
-          opcao.textContent = hora;
-          horario.appendChild(opcao);
-        });
+      hiddenProf.value = '';
+      profFeedback.classList.remove('d-block');
+
+      if (!data || !hora) {
+        mostrarVazio('Escolha a data e o horário para ver os profissionais disponíveis.');
+        return;
       }
 
-      function filtrarProfissionais() {
-        const correspondentes = opcoes.filter(function (opcao) {
-          return opcao.dataset.tipo === tipo.value;
-        });
-
-        profissional.replaceChildren();
-
-        const orientacao = document.createElement('option');
-        orientacao.value = '';
-        orientacao.disabled = true;
-        orientacao.selected = true;
-
-        if (!tipo.value) {
-          orientacao.textContent = 'Selecione o tipo de atendimento primeiro';
-        } else if (correspondentes.length === 0) {
-          orientacao.textContent = 'Nenhum perfil disponível nesta categoria';
-        } else {
-          orientacao.textContent = 'Selecione um profissional ou grupo';
-        }
-
-        profissional.appendChild(orientacao);
-        profissional.disabled = !tipo.value;
-
-        correspondentes.forEach(function (opcao) {
-          profissional.appendChild(opcao.cloneNode(true));
-        });
-
-        atualizarDisponibilidade();
-      }
-
-      profissional.addEventListener('change', atualizarDisponibilidade);
-      tipo.addEventListener('change', filtrarProfissionais);
-
-      formulario.addEventListener('reset', function () {
-        setTimeout(filtrarProfissionais, 0);
+      const dia = diaDaSemana(data);
+      const disponiveis = profissionais.filter(function (p) {
+        const horarios = p.agenda[dia] || [];
+        const atende = !servico || p.atendimentos.indexOf(servico) !== -1;
+        return horarios.indexOf(hora) !== -1 && atende;
       });
 
-      const perfilInicial = opcoes.find(function (opcao) {
-        return opcao.value === voluntario;
-      });
-
-      if (perfilInicial) {
-        tipo.value = perfilInicial.dataset.tipo;
+      if (disponiveis.length === 0) {
+        mostrarVazio('Nenhum profissional disponível em ' + formatarData(data) + ' às ' + hora +
+          (servico ? ' para ' + servico.toLowerCase() : '') + '. Tente outro horário ou data.');
+        return;
       }
 
-      filtrarProfissionais();
+      empty.classList.add('d-none');
+      list.innerHTML = disponiveis.map(function (p) {
+        const badges = p.atendimentos.map(function (a) {
+          return '<span class="badge-soft">' + a + '</span>';
+        }).join('');
+        return '' +
+          '<div class="col-12 col-sm-6">' +
+            '<label class="card-premium p-3 d-flex gap-3 align-items-start" for="prof-' + p.id + '" style="cursor:pointer;">' +
+              '<input class="form-check-input mt-1 flex-shrink-0" type="radio" name="professionalChoice" id="prof-' + p.id + '" value="' + p.nome + '">' +
+              '<img src="' + p.foto + '" alt="" class="rounded-circle flex-shrink-0" width="56" height="56" style="object-fit:cover;">' +
+              '<span class="d-block">' +
+                '<strong class="text-navy d-block">' + p.nome + '</strong>' +
+                '<small class="text-primary-custom fw-semibold d-block mb-2">' + p.funcao + '</small>' +
+                '<span class="d-flex flex-wrap gap-1">' + badges + '</span>' +
+              '</span>' +
+            '</label>' +
+          '</div>';
+      }).join('');
 
-      if (perfilInicial) {
-        profissional.value = perfilInicial.value;
-        atualizarDisponibilidade();
+      // Mantém a escolha se o profissional continuar disponível
+      if (selecionadoAntes) {
+        const radio = Array.from(list.querySelectorAll('input[type="radio"]'))
+          .find(function (r) { return r.value === selecionadoAntes; });
+        if (radio) { radio.checked = true; marcarSelecionado(radio); }
       }
+    }
+
+    function marcarSelecionado(radio) {
+      list.querySelectorAll('label.card-premium').forEach(function (l) { l.classList.remove('bg-soft-alt'); });
+      radio.closest('label').classList.add('bg-soft-alt');
+      hiddenProf.value = radio.value;
+      profFeedback.classList.remove('d-block');
+    }
+
+    list.addEventListener('change', function (e) {
+      if (e.target.name === 'professionalChoice') marcarSelecionado(e.target);
     });
+
+    [dateInput, timeSelect, serviceSelect].forEach(function (el) {
+      el.addEventListener('change', renderizar);
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const formValido = form.checkValidity();
+      const temProfissional = !!hiddenProf.value;
+
+      if (!temProfissional) profFeedback.classList.add('d-block');
+      form.classList.add('was-validated');
+
+      if (!formValido || !temProfissional) return;
+
+      // Aqui entra o envio real (fetch/API). Por enquanto, só confirma na tela.
+      const nome = document.getElementById('fullName').value.trim();
+      success.innerHTML = '<i class="bi bi-check-circle me-2"></i>' +
+        '<strong>Agendamento realizado, ' + nome + '!</strong> ' +
+        serviceSelect.value + ' com ' + hiddenProf.value + ' em ' +
+        formatarData(dateInput.value) + ' às ' + timeSelect.value + '.';
+      success.classList.remove('d-none');
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      form.reset();
+      form.classList.remove('was-validated');
+      renderizar();
+    });
+  })();
   </script>
 </body>
 </html>

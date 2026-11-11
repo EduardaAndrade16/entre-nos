@@ -1,6 +1,3 @@
-/* =====================================================
-   NEXORA — UI Interactions (Vanilla JS)
-   ===================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
 

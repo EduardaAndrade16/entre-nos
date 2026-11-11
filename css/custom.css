@@ -141,6 +141,7 @@ a { text-decoration: none; }
   color: var(--n-slate);
   max-width: 620px;
 }
+.volunteer-intro { text-align: justify; }
 .section-header { margin-bottom: var(--n-space-xl); }
 
 /* =====================================================
@@ -167,6 +168,10 @@ a { text-decoration: none; }
   transform: translateY(-2px);
   box-shadow: 0 16px 32px rgba(21, 94, 239, 0.32);
   color: #fff;
+}
+
+.hero-content .btn-primary:hover {
+  transform: none;
 }
 
 .btn-outline-primary {

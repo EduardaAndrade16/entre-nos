@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EntreNos - Suporte</title>
-  <meta name="description" content="Fale com a equipe EntreNós e inscreva-se para ser voluntário na nossa plataforma de apoio à saúde mental.">
+  <title>EntreNos - Seja Voluntário</title>
+  <meta name="description"
+    content="Fale com a equipe EntreNós e inscreva-se para ser voluntário na nossa plataforma de apoio à saúde mental.">
   <link rel="icon" type="image/png" href="img/logoEntreNos.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -21,20 +26,21 @@
       <a class="navbar-brand navbar-brand-custom" href="index.html" aria-label="Entre Nós home">
         <img src="img/logoEntreNos.png" alt="Entre Nós" class="navbar-logo">
       </a>
-      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler navbar-toggler-custom" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="bar"></span><span class="bar"></span><span class="bar"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-1 mt-3 mt-lg-0">
           <li class="nav-item"><a class="nav-link nav2" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="voluntarios.html">Voluntários</a></li>
-          <li class="nav-item"><a class="nav-link nav2 active" href="voluntarioscadastro.html">Participe</a></li>
+          <li class="nav-item"><a class="nav-link nav2 active" href="voluntarioscadastro.html">Seja Voluntário</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="agendamento.html">Agendamento</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="faq.html">FAQ</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="suporte.html">Suporte</a></li>
           <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-            <a href="cadastro.html" class="btn btn-primary btn-sm-custom w-100">Cadastre-se aqui!</a>
+            <a href="cadastro.html" class="btn btn-primary btn-sm-custom w-100">Cadastro de usuário</a>
           </li>
           <li class="nav-item"><a class="nav-link nav2" href="login.html">Login</a></li>
         </ul>
@@ -58,28 +64,136 @@
           <div class="text-center">
             <span class="eyebrow">Mande uma mensagem</span>
             <h2 class="section-title mb-4">Quer ser um voluntário? Se inscreva</h2>
-            <p class="section-subtitle mx-auto mb-4">Os voluntários são parte essencial do EntreNós: pessoas que dedicam um pouco do seu tempo para ouvir, acolher e apoiar quem precisa. Se você tem vontade de ajudar, seja com ou sem especialização na área, preencha o formulário abaixo contando um pouco sobre você e seus motivos. Nossa equipe vai analisar sua inscrição e entrar em contato pelo e-mail informado.</p>
+            <p class="section-subtitle volunteer-intro mx-auto mb-4">Os voluntários são parte essencial do EntreNós:
+              pessoas que dedicam um pouco do seu tempo para ouvir, acolher e apoiar quem precisa. Se você tem vontade
+              de ajudar, seja com ou sem especialização na área, preencha o formulário abaixo contando um pouco sobre
+              você e seus motivos. Nossa equipe vai analisar sua inscrição e entrar em contato pelo e-mail informado.
+            </p>
           </div>
           <form class="needs-validation" novalidate>
             <div class="row g-3">
-              <div class="col-md-6">
+              <div class="col-12">
                 <label class="form-label" for="fullName">Nome Completo</label>
-                <input type="text" class="form-control" id="fullName" required>
-                <div class="invalid-feedback">Por favor, insira seu nome completo.</div>
+
+                <input type="text" class="form-control" id="fullName" placeholder="Informe seu nome aqui"
+                  oninput="validarNome(this)" required>
+
+                <div class="invalid-feedback" id="nomeFeedback">
+                </div>
               </div>
+
+              <div class="col-md-6">
+                <label class="form-label" for="workcpf">CPF (Cadastro de Pessoa Física)</label>
+
+                <input type="text" class="form-control" id="workcpf" placeholder="123.456.789-10"
+                  oninput="mascaraCpf(this)" onblur="validarCPF(this)" maxlength="14" inputmode="numeric" required>
+
+                <div class="invalid-feedback" id="cpfFeedback"></div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label" for="volunteerCfp">CRP (Conselho Regional de Psicologia)</label>
+
+                <input type="text" class="form-control" id="volunteerCfp" placeholder="CRP-06/123456"
+                  oninput="mascaraCRP(this)" onblur="validarCRP(this)" maxlength="12" required>
+
+                <div class="invalid-feedback" id="crpFeedback"></div>
+              </div>
+
               <div class="col-md-6">
                 <label class="form-label" for="workEmail">Email</label>
-                <input type="email" class="form-control" id="workEmail" required>
+                <input type="email" class="form-control" id="workEmail" placeholder="seu.email@gmail.com" required>
                 <div class="invalid-feedback">Por favor, insira um email válido.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="workTel">Telefone</label>
+                <input type="tel" class="form-control" id="workTel" placeholder="(xx) xxxxx - xxxx"
+                  oninput="mascaraTelefone(this)" maxlength="14" required>
+
+                <div class="invalid-feedback">Por favor, insira um telefone válido.</div>
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="esp">Possui especialização em alguma área?</label>
                 <select class="form-select" id="esp" required>
                   <option value="" selected disabled>Selecione uma opção</option>
-                  <option>Sim</option>
-                  <option>Não</option>
+                  <option value="sim">Sim</option>
+                  <option value="nao">Não</option>
                 </select>
                 <div class="invalid-feedback">Por favor, selecione uma opção.</div>
+              </div>
+              <div class="col-12 d-none" id="specializationAreas">
+                <fieldset>
+                  <legend class="form-label fs-6">Qual?</legend>
+                  <div class="invalid-feedback" id="specializationFeedback">Selecione pelo menos uma área de especialização.</div>
+                  <div class="row g-2">
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaClinica" value="Psicologia Clínica" aria-describedby="specializationFeedback">
+                        <label class="form-check-label" for="areaClinica">Psicologia Clínica</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaEscolar" value="Psicologia Escolar e Educacional">
+                        <label class="form-check-label" for="areaEscolar">Psicologia Escolar e Educacional</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaOrganizacional" value="Psicologia Organizacional e do Trabalho">
+                        <label class="form-check-label" for="areaOrganizacional">Psicologia Organizacional e do Trabalho</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaNeuro" value="Neuropsicologia">
+                        <label class="form-check-label" for="areaNeuro">Neuropsicologia</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaHospitalar" value="Psicologia Hospitalar">
+                        <label class="form-check-label" for="areaHospitalar">Psicologia Hospitalar</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaSocial" value="Psicologia Social">
+                        <label class="form-check-label" for="areaSocial">Psicologia Social</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaJuridica" value="Psicologia Jurídica">
+                        <label class="form-check-label" for="areaJuridica">Psicologia Jurídica</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaEsporte" value="Psicologia do Esporte">
+                        <label class="form-check-label" for="areaEsporte">Psicologia do Esporte</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaTransito" value="Psicologia do Trânsito">
+                        <label class="form-check-label" for="areaTransito">Psicologia do Trânsito</label>
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="specializationArea" id="areaOutra" value="Outra">
+                        <label class="form-check-label" for="areaOutra">Outra</label>
+                      </div>
+                    </div>
+                    <div class="col-12 d-none" id="otherAreaField">
+                      <label class="form-label" for="otherArea">Qual?</label>
+                      <input class="form-control" type="text" id="otherArea" name="otherSpecializationArea"
+                        placeholder="Informe sua área de especialização">
+                      <div class="invalid-feedback">Por favor, informe a área de especialização.</div>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="budget">Selecione a área de interesse:</label>
@@ -93,21 +207,25 @@
                 <div class="invalid-feedback">Por favor, selecione uma opção.</div>
               </div>
               <div class="col-12">
-                <label class="form-label" for="message">Descrição dos motivos de escolha e objetivos</label>
-                <textarea class="form-control" id="message" rows="5" placeholder="Nos diga sobre seus motivos de escolha, objetivos e outras informações que deveríamos saber." required></textarea>
+                <label class="form-label" for="message">Descrição dos motivos de escolha e objetivos (Max. 500 caracteres)</label>
+                <textarea class="form-control" id="message" rows="5"
+                  placeholder="Nos diga sobre seus motivos de escolha, objetivos e outras informações que deveríamos saber." maxlength="500"
+                  required></textarea>
                 <div class="invalid-feedback">Por favor, compartilhe algum detalhe conosco.</div>
               </div>
               <div class="col-12">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="agreeTerms" required>
                   <label class="form-check-label small text-slate" for="agreeTerms">
-                    Eu concordo com a <a href="#" class="text-primary-custom">Política de Privacidade</a> e consinto em ser contatado sobre minha consulta.
+                    Eu concordo com a <a href="#" class="text-primary-custom">Política de Privacidade</a> e consinto em
+                    ser contatado sobre minha consulta.
                   </label>
                   <div class="invalid-feedback">Você deve concordar antes de enviar.</div>
                 </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-lg-custom">Mandar solicitação <i class="bi bi-send ms-1"></i></button>
+                <button type="submit" class="btn btn-primary btn-lg-custom">Mandar solicitação <i
+                    class="bi bi-send ms-1"></i></button>
               </div>
             </div>
           </form>
@@ -129,26 +247,32 @@
           <div class="accordion accordion-custom" id="contactFaq">
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1">O que acontece depois que eu enviar a inscrição?</button>
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq1">O que
+                  acontece depois que eu enviar a inscrição?</button>
               </h2>
               <div id="cfaq1" class="accordion-collapse collapse show" data-bs-parent="#contactFaq">
-                <div class="accordion-body">Nossa equipe analisa as inscrições e entra em contato pelo e-mail informado. Enviamos um e-mail assim que a solicitação for aprovada. O prazo é de até 14 dias úteis.</div>
+                <div class="accordion-body">Nossa equipe analisa as inscrições e entra em contato pelo e-mail informado.
+                  Enviamos um e-mail assim que a solicitação for aprovada. O prazo é de até 14 dias úteis.</div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq2">Vou precisar de alguma documentação adicional?</button>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#cfaq2">Vou precisar de alguma documentação adicional?</button>
               </h2>
               <div id="cfaq2" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
-                <div class="accordion-body">Não, não é necessário enviar documentação adicional no momento da inscrição. Se for necessário, nossa equipe entrará em contato.</div>
+                <div class="accordion-body">Não, não é necessário enviar documentação adicional no momento da inscrição.
+                  Se for necessário, nossa equipe entrará em contato.</div>
               </div>
             </div>
             <div class="accordion-item">
               <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cfaq3">O que acontece se não houver retorno?</button>
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#cfaq3">O que acontece se não houver retorno?</button>
               </h2>
               <div id="cfaq3" class="accordion-collapse collapse" data-bs-parent="#contactFaq">
-                <div class="accordion-body">Entre em contato com nossa equipe, que poderemos confirmar o status e a resposta sobre sua solicitação.</div>
+                <div class="accordion-body">Entre em contato com nossa equipe, que poderemos confirmar o status e a
+                  resposta sobre sua solicitação.</div>
               </div>
             </div>
           </div>
@@ -161,10 +285,12 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6">
-          <a class="navbar-brand-custom d-inline-block mb-3" href="index.html" aria-label="Entre Nós home" style="color:#fff !important;">
+          <a class="navbar-brand-custom d-inline-block mb-3" href="index.html" aria-label="Entre Nós home"
+            style="color:#fff !important;">
             <img src="img/logoEntreNos.png" alt="Entre Nós" class="navbar-logo">
           </a>
-          <p class="text-white-50 mb-4" style="max-width:320px;">Entre nós, existe espaço para falar, ouvir, acolher e cuidar.</p>
+          <p class="text-white-50 mb-4" style="max-width:320px;">Entre nós, existe espaço para falar, ouvir, acolher e
+            cuidar.</p>
           <div class="d-flex gap-2">
             <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
             <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
@@ -192,7 +318,8 @@
           <a href="faq.html">FAQ</a>
         </div>
       </div>
-      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center text-md-start">
+      <div
+        class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 text-center text-md-start">
         <p class="mb-0" style="display: flex;">&copy; 2026 EntreNós. Todos os direitos reservados.</p>
         <div class="d-flex gap-4"></div>
       </div>
@@ -203,5 +330,82 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/mascara.js"></script>
+  <script src="js/validacoes.js"></script>
+  <script>
+    const specializationSelect = document.getElementById('esp');
+    const volunteerForm = specializationSelect.closest('form');
+    const specializationAreas = document.getElementById('specializationAreas');
+    const specializationAreaCheckboxes = specializationAreas.querySelectorAll('input[type="checkbox"]');
+    const otherAreaCheckbox = document.getElementById('areaOutra');
+    const otherAreaField = document.getElementById('otherAreaField');
+    const otherAreaInput = document.getElementById('otherArea');
+    const specializationFeedback = document.getElementById('specializationFeedback');
+    let specializationValidationAttempted = false;
+
+    function updateSpecializationAreas() {
+      const showAreas = specializationSelect.value === 'sim';
+      specializationAreas.classList.toggle('d-none', !showAreas);
+      specializationAreaCheckboxes.forEach(function (checkbox) {
+        checkbox.disabled = !showAreas;
+        if (!showAreas) checkbox.checked = false;
+      });
+      updateSpecializationSelection();
+      updateOtherAreaField();
+    }
+
+    function updateSpecializationSelection() {
+      const showAreas = specializationSelect.value === 'sim';
+      const hasSelection = Array.from(specializationAreaCheckboxes).some(function (checkbox) {
+        return checkbox.checked;
+      });
+      specializationFeedback.classList.toggle(
+        'd-block',
+        specializationValidationAttempted && showAreas && !hasSelection
+      );
+    }
+
+    function updateOtherAreaField() {
+      const showOtherArea = otherAreaCheckbox.checked && !otherAreaCheckbox.disabled;
+      otherAreaField.classList.toggle('d-none', !showOtherArea);
+      otherAreaInput.disabled = !showOtherArea;
+      otherAreaInput.required = showOtherArea;
+      if (!showOtherArea) otherAreaInput.value = '';
+    }
+
+    specializationSelect.addEventListener('change', updateSpecializationAreas);
+    volunteerForm.querySelector('button[type="submit"]').addEventListener('click', function () {
+      specializationValidationAttempted = true;
+      updateSpecializationSelection();
+    });
+    volunteerForm.addEventListener('submit', function (event) {
+      specializationValidationAttempted = true;
+      updateSpecializationSelection();
+
+      const hasSelection = Array.from(specializationAreaCheckboxes).some(function (checkbox) {
+        return checkbox.checked;
+      });
+      if (specializationSelect.value === 'sim' && !hasSelection) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+    }, true);
+    specializationAreaCheckboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', updateSpecializationSelection);
+    });
+    otherAreaCheckbox.addEventListener('change', updateOtherAreaField);
+    updateSpecializationAreas();
+
+    const toggleVolunteerPassword = document.getElementById('toggleVolunteerPassword');
+    const volunteerPassword = document.getElementById('volunteerPassword');
+
+    toggleVolunteerPassword.addEventListener('click', function () {
+      const showPassword = volunteerPassword.type === 'password';
+      volunteerPassword.type = showPassword ? 'text' : 'password';
+      this.innerHTML = showPassword ? '<i class="bi bi-eye-slash" aria-hidden="true"></i>' : '<i class="bi bi-eye" aria-hidden="true"></i>';
+      this.setAttribute('aria-label', showPassword ? 'Ocultar senha' : 'Mostrar senha');
+    });
+  </script>
 </body>
+
 </html>
