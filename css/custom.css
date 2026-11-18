@@ -689,6 +689,20 @@ a { text-decoration: none; }
   transition: all 0.2s ease;
 }
 
+#volunteerForm {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--n-border);
+  border-radius: var(--n-radius-lg);
+  background-color: #fff;
+  box-shadow: var(--n-shadow-sm);
+}
+
+.form-control::placeholder,
+.form-control::-webkit-input-placeholder {
+  color: #a7a3b0;
+  opacity: 1;
+}
+
 .form-control:focus,
 .form-select:focus {
   border-color: var(--n-primary);
@@ -1037,6 +1051,192 @@ a { text-decoration: none; }
 .footer-nexora a.social-icon:focus-visible {
     outline: 2px solid #F5C96A;
     outline-offset: 4px;
+}
+
+/* Volunteer list */
+.volunteer-list-section {
+  display: flex;
+  justify-content: center;
+}
+
+.volunteer-list-section > .reveal {
+  width: 100%;
+}
+
+.volunteer-table-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid var(--n-border);
+  border-radius: var(--n-radius-md);
+  background: #fff;
+  box-shadow: var(--n-shadow-sm);
+}
+
+.volunteer-table {
+  width: 100%;
+  min-width: 1000px;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+.volunteer-table th,
+.volunteer-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  vertical-align: middle;
+  border-right: 1px solid #e9ecef;
+}
+
+.volunteer-table th:last-child,
+.volunteer-table td:last-child {
+  border-right: 0;
+}
+
+.volunteer-table tbody tr {
+  transition: background-color 0.18s ease;
+}
+
+.volunteer-table tbody tr:hover {
+  background-color: #f8f6fc;
+}
+
+.volunteer-table th {
+  font-weight: 600;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.volunteer-table thead th {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.volunteer-table .volunteer-select-column,
+.volunteer-table .volunteer-action-column {
+  width: 1%;
+  text-align: center;
+}
+
+.volunteer-select-column input {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.volunteer-delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #dc3545;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.volunteer-view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--n-primary);
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.volunteer-view-btn:hover,
+.volunteer-view-btn:focus-visible {
+  background: #e9e3f3;
+  color: var(--n-primary-dark);
+}
+
+.volunteer-view-btn:focus-visible {
+  outline: 2px solid var(--n-primary);
+  outline-offset: 2px;
+}
+
+.volunteer-table .volunteer-action-column {
+  white-space: nowrap;
+}
+
+.volunteer-delete-btn:hover,
+.volunteer-delete-btn:focus-visible {
+  background: #f8d7da;
+  color: #b02a37;
+}
+
+.volunteer-delete-btn:focus-visible {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
+
+.volunteer-table-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1100px;
+  margin: 1rem auto 0;
+}
+
+.volunteer-details-card {
+  max-width: 900px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid var(--n-border);
+  border-radius: var(--n-radius-lg);
+  background: #fff;
+  box-shadow: var(--n-shadow-sm);
+}
+
+.volunteer-details-card h2 {
+  color: var(--n-navy);
+}
+
+#btnExcluirSelecionados {
+  border-radius: 0.6rem;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+#btnExcluirSelecionados:not(:disabled):hover {
+  color: #fff;
+  background-color: #b02a37;
+  border-color: #b02a37;
+}
+
+#btnExcluirSelecionados:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 575.98px) {
+  .volunteer-table th,
+  .volunteer-table td {
+    padding: 0.85rem 1rem;
+  }
+
+  .volunteer-table-actions {
+    justify-content: flex-end;
+  }
+
+  .volunteer-table-actions .btn {
+    flex: 1 1 auto;
+  }
 }
 
 

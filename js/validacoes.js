@@ -82,18 +82,20 @@ function validarCRP(input) {
     input.classList.remove("is-invalid", "is-valid");
 
     if (crp === "") {
-        feedback.textContent = "Por favor, informe seu número de CRP.";
-        input.classList.add("is-invalid");
-        return false;
+        feedback.textContent = "";
+        input.setCustomValidity("");
+        return true;
     }
 
     if (!/^CRP-\d{2}\/\d+$/.test(crp)) {
         feedback.textContent = "Número de CRP inválido. Utilize o formato CRP-XX/XXXXX.";
         input.classList.add("is-invalid");
+        input.setCustomValidity(feedback.textContent);
         return false;
     }
 
     feedback.textContent = "";
+    input.setCustomValidity("");
     input.classList.add("is-valid");
     return true;
 }

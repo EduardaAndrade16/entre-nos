@@ -29,25 +29,13 @@ function mascaraTelefone() {
 
 
 function mascaraCRP(input) {
-    let crp = input.value.toUpperCase();
+    let numeros = input.value.replace(/\D/g, "").slice(0, 8);
 
-    // Remove tudo que não for letra ou número
-    crp = crp.replace(/[^A-Z0-9]/g, "");
-
-    // Garante que comece com CRP
-    crp = crp.replace(/^(?!CRP).*/, "");
-
-    // Remove CRP para formatar o restante
-    let numeros = crp.replace("CRP", "");
-
-    // Limita a quantidade de números
-    numeros = numeros.replace(/\D/g, "").slice(0, 8);
-
-    if (numeros.length > 2) {
+    if (numeros.length === 0) {
+        input.value = "";
+    } else if (numeros.length > 2) {
         input.value = "CRP-" + numeros.slice(0, 2) + "/" + numeros.slice(2);
-    } else if (numeros.length > 0) {
-        input.value = "CRP-" + numeros;
     } else {
-        input.value = "CRP-";
+        input.value = "CRP-" + numeros;
     }
 }
