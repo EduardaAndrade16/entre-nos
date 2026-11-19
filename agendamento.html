@@ -28,7 +28,7 @@
         <ul class="navbar-nav ms-auto align-items-lg-center gap-1 mt-3 mt-lg-0">
           <li class="nav-item"><a class="nav-link nav2" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="voluntarios.html">Voluntários</a></li>
-          <li class="nav-item"><a class="nav-link nav2" href="voluntarioscadastro.html">Participe</a></li>
+          <li class="nav-item"><a class="nav-link nav2" href="voluntarioscadastro.html">Seja Voluntário</a></li>
           <li class="nav-item"><a class="nav-link nav2 active" aria-current="page" href="agendamento.html">Agendamento</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="blog.html">Blog</a></li>
           <li class="nav-item"><a class="nav-link nav2" href="faq.html">FAQ</a></li>
@@ -113,16 +113,16 @@
 
           <form class="needs-validation" id="appointmentForm" novalidate>
             <div class="row g-3">
-
+<!--  -->
               <div class="col-md-6">
-                <label class="form-label" for="fullName">Nome completo</label>
-                <input type="text" class="form-control" id="fullName"
-                       placeholder="Digite seu nome completo" required>
-                <div class="invalid-feedback">Informe seu nome completo.</div>
+                <label class="form-label" for="fName">Nome completo</label>
+                <input type="text" class="form-control" id="fName"
+                       placeholder="Digite seu nome completo" oninput="validarNome1(this)" required>
+                <div class="invalid-feedback" id="nomFeedback">Informe seu nome completo.</div>
               </div>
 
               <div class="col-md-6">
-                <label class="form-label" for="fullName">Data de nascimento</label>
+                <label class="form-label" for="birthdayDate">Data de nascimento</label>
                 <input type="date" class="form-control" id="birthdayDate" required>
                 <div class="invalid-feedback">Informe sua data de nascimento.</div>
               </div>
@@ -137,7 +137,7 @@
               <div class="col-md-6">
                 <label class="form-label" for="phone">Telefone</label>
                 <input type="tel" class="form-control" id="phone"
-                       placeholder="(00) 00000-0000" required>
+                       placeholder="(00) 00000-0000" oninput="mascaraTelefone(this)" required>
                 <div class="invalid-feedback">Informe seu telefone.</div>
               </div>
 
@@ -146,33 +146,61 @@
                <div class="col-md-6">
                 <label class="form-label" for="cep">CEP</label>
                 <input type="text" class="form-control" id="cep"
-                       placeholder="00000 - 000" required>
+                       placeholder="00000 - 000" oninput="mascaraCEP(this)" required>
                 <div class="invalid-feedback">Informe seu CEP.</div>
               </div>
 
                <div class="col-md-6">
                 <label class="form-label" for="ender">Endereço</label>
-                <input type="text" class="form-control" id="end"
-                       placeholder="Ex.: Rua da felicidade" required>
-                <div class="invalid-feedback">Informe seu endereço.</div>
+                <input type="text" class="form-control" id="ender"
+                       placeholder="Ex.: Rua da felicidade" oninput="validarEndereco(this)" required>
+                <div class="invalid-feedback" id="endFeedback">Informe seu endereço.</div>
               </div>
 
                <div class="col-md-6">
                 <label class="form-label" for="num">Número</label>
-                <input type="text" class="form-control" id="num" placeholder="123" required>
-                <div class="invalid-feedback">Informe o número da sua residência.</div>
+                <input type="text" class="form-control" id="num" placeholder="123" oninput="validarNumeroCasa(this)" required>
+                <div class="invalid-feedback" id="numCasaFeedback"></div>
               </div>
 
                <div class="col-md-6">
                 <label class="form-label" for="city">Cidade</label>
-                <input type="text" class="form-control" id="city" placeholder="Nome da cidade" required>
-                <div class="invalid-feedback">Informe sua cidade.</div>
+                <input type="text" class="form-control" id="city" placeholder="Nome da cidade" oninput="validarCidade(this)" required>
+                <div class="invalid-feedback" id="cityFeedback"></div>
               </div>
 
                <div class="col-md-6">
                 <label class="form-label" for="state">Estado</label>
-                <input type="text" class="form-control" id="state" placeholder="Nome do estado" required>
-                <div class="invalid-feedback">Informe o seu estado.</div>
+                <select class="form-select" id="state" required>
+                  <option value="" selected disabled>Selecione uma opção</option>
+                  <option>Acre</option>
+                  <option>Alagoas</option>
+                  <option>Amapá</option>
+                  <option>Amazonas</option>
+                  <option>Bahia</option>
+                  <option>Ceará</option>
+                  <option>Distrito Federal</option>
+                  <option>Espírito Santo</option>
+                  <option>Goiás</option>
+                  <option>Maranhão</option>
+                  <option>Mato Grosso</option>
+                  <option>Mato Grosso do Sul</option>
+                  <option>Minas Gerais</option>
+                  <option>Pará</option>
+                  <option>Paraíba</option>
+                  <option>Paraná</option>
+                  <option>Pernambuco</option>
+                  <option>Piauí</option>
+                  <option>Rio de Janeiro</option>
+                  <option>Rio Grande do Norte</option>
+                  <option>Rio Grande do Sul</option>
+                  <option>Rondônia</option>
+                  <option>Roraima</option>
+                  <option>Santa Catarina</option>
+                  <option>São Paulo</option>
+                  <option>Sergipe</option>
+                  <option>Tocantins</option>
+                </select>
               </div>
 
               <div class="col-md-6">
@@ -223,10 +251,10 @@
                 </div>
 
                 <div class="row g-3" id="professionalsList" role="radiogroup" aria-label="Profissionais disponíveis"></div>
-
+                <br>
                 <div class="invalid-feedback" id="professionalFeedback">Selecione um profissional disponível.</div>
               </div>
-
+              <br><br><br>
               <div class="col-12">
                 <span class="form-label d-block">Observações</span>
                 <textarea class="form-control" id="observations" rows="5"
@@ -303,6 +331,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/mascara.js"></script>
+  <script src="js/validacoes.js"></script>
+  <script>
+    const inputData = document.getElementById('birthdayDate');
+    const hoje = new Date();
+
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const dia = String(hoje.getDate()).padStart(2, '0');
+
+    inputData.max = `${ano}-${mes}-${dia}`;
+  </script>
   <script>
   (function () {
     // Voluntários de exemplo (mesmos da página Voluntários)

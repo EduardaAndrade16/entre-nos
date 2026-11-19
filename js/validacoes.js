@@ -47,7 +47,7 @@ function validarCPF(input) {
         feedback.textContent = "CPF inválido. Verifique os números digitados.";
         input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
-        return false;
+        // return false;
     }
 
     feedback.textContent = "";
@@ -72,6 +72,112 @@ function validarNome(input) {
 
     if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
         feedback.textContent = "O nome não pode conter números ou caracteres especiais.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    feedback.textContent = "";
+    input.setCustomValidity("");
+    input.classList.add("is-valid");
+    return true;
+}
+
+function validarNome1(input) {
+    const nome = input.value.trim();
+    const feedback = document.getElementById("nomFeedback");
+
+    input.classList.remove("is-invalid", "is-valid");
+
+    if (nome === "") {
+        feedback.textContent = "Por favor, insira seu nome completo.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
+        feedback.textContent = "O nome não pode conter números ou caracteres especiais.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    feedback.textContent = "";
+    input.setCustomValidity("");
+    input.classList.add("is-valid");
+    return true;
+}
+
+//Endereço, cidade, etc
+function validarCidade(input) {
+    const nome = input.value.trim();
+    const feedback = document.getElementById("cityFeedback");
+
+    input.classList.remove("is-invalid", "is-valid");
+
+    if (nome === "") {
+        feedback.textContent = "Por favor, insira o nome da cidade.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
+        feedback.textContent = "O nome não pode conter números ou caracteres especiais.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    feedback.textContent = "";
+    input.setCustomValidity("");
+    input.classList.add("is-valid");
+    return true;
+}
+
+function validarEndereco(input) {
+    const nome = input.value.trim();
+    const feedback = document.getElementById("endFeedback");
+
+    input.classList.remove("is-invalid", "is-valid");
+
+    if (nome === "") {
+        feedback.textContent = "Por favor, insira o nome da cidade.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
+        feedback.textContent = "O nome não pode conter números ou caracteres especiais.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    feedback.textContent = "";
+    input.setCustomValidity("");
+    input.classList.add("is-valid");
+    return true;
+}
+
+function validarNumeroCasa(input) {
+    input.value = input.value.replace(/\D/g, "");
+    const num = input.value.trim();
+    const feedback = document.getElementById("numCasaFeedback");
+
+    input.classList.remove("is-invalid", "is-valid");
+
+    if (num === "") {
+        feedback.textContent = "Por favor, insira o número da sua residência.";
+        input.setCustomValidity(feedback.textContent);
+        input.classList.add("is-invalid");
+        return false;
+    }
+
+    if (!/^\d+$/.test(num)) {
+        feedback.textContent = "O número da residência deve conter apenas dígitos.";
         input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
         return false;

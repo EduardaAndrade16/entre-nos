@@ -24,8 +24,6 @@ function mascaraTelefone(input) {
    input.value = telefone;
    input.setCustomValidity(
       numeros.length > 0 && numeros.length < 11
-         ? "O telefone deve conter 11 números, incluindo o DDD."
-         : ""
    );
    input.classList.remove("is-invalid", "is-valid");
    if (numeros.length > 0) {
@@ -44,4 +42,21 @@ function mascaraCRP(input) {
     } else {
         input.value = "CRP-" + numeros;
     }
+}
+
+function mascaraCEP(input) {
+    let cep = input.value.replace(/\D/g, "").slice(0, 8);
+
+    if (cep.length > 5) {
+        cep = cep.replace(/^(\d{5})(\d)/, "$1-$2");
+    }
+
+    input.value = cep;
+    input.setCustomValidity(
+      cep.length > 0 && cep.length < 9
+   );
+   input.classList.remove("is-invalid", "is-valid");
+   if (cep.length > 0) {
+      input.classList.add(cep.length === 9 ? "is-valid" : "is-invalid");
+   }
 }
