@@ -1,4 +1,4 @@
-function mascaraCpf(input) {
+ function mascaraCpf(input) {
   var cpf = input.value.replace(/\D/g, "").slice(0, 11);
 
   input.value = cpf
