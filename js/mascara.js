@@ -8,23 +8,29 @@ function mascaraCpf(input) {
 }
 
 
-function mascaraTelefone() {
-   var tel = event.target.value;
-   tel = tel.replace(/\D/g, "")
-   tel = tel.replace(/^(\d)/, "($1")
-   tel = tel.replace(/(.{3})(\d)/, "$1)$2")
-   if (tel.length == 9) {
-      tel = tel.replace(/(.{1})$/, "-$1")
-   } else if (tel.length == 10) {
-      tel = tel.replace(/(.{2})$/, "-$1")
-   } else if (tel.length == 11) {
-      tel = tel.replace(/(.{3})$/, "-$1")
-   } else if (tel.length == 12) {
-      tel = tel.replace(/(.{4})$/, "-$1")
-   } else if (tel.length > 12) {
-      tel = tel.replace(/(.{4})$/, "-$1")
+function mascaraTelefone(input) {
+   const numeros = input.value.replace(/\D/g, "").slice(0, 11);
+   let telefone = numeros;
+
+   if (numeros.length > 2) {
+      telefone = "(" + numeros.slice(0, 2) + ") " + numeros.slice(2, 7);
+      if (numeros.length > 7) {
+         telefone += "-" + numeros.slice(7);
+      }
+   } else if (numeros.length > 0) {
+      telefone = "(" + numeros;
    }
-   event.target.value = tel;
+
+   input.value = telefone;
+   input.setCustomValidity(
+      numeros.length > 0 && numeros.length < 11
+         ? "O telefone deve conter 11 números, incluindo o DDD."
+         : ""
+   );
+   input.classList.remove("is-invalid", "is-valid");
+   if (numeros.length > 0) {
+      input.classList.add(numeros.length === 11 ? "is-valid" : "is-invalid");
+   }
 }
 
 

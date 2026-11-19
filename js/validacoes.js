@@ -6,12 +6,14 @@ function validarCPF(input) {
 
     if (cpf.length === 0) {
         feedback.textContent = "Por favor, digite seu CPF.";
+        input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
         return false;
     }
 
     if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
         feedback.textContent = "CPF inválido. Verifique os números digitados.";
+        input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
         return false;
     }
@@ -27,6 +29,7 @@ function validarCPF(input) {
 
     if (digito1 !== Number(cpf[9])) {
         feedback.textContent = "CPF inválido. Verifique os números digitados.";
+        input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
         return false;
     }
@@ -42,10 +45,13 @@ function validarCPF(input) {
 
     if (digito2 !== Number(cpf[10])) {
         feedback.textContent = "CPF inválido. Verifique os números digitados.";
+        input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
         return false;
     }
 
+    feedback.textContent = "";
+    input.setCustomValidity("");
     input.classList.add("is-valid");
     return true;
 }
@@ -59,17 +65,20 @@ function validarNome(input) {
 
     if (nome === "") {
         feedback.textContent = "Por favor, insira seu nome completo.";
+        input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
         return false;
     }
 
     if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
         feedback.textContent = "O nome não pode conter números ou caracteres especiais.";
+        input.setCustomValidity(feedback.textContent);
         input.classList.add("is-invalid");
         return false;
     }
 
     feedback.textContent = "";
+    input.setCustomValidity("");
     input.classList.add("is-valid");
     return true;
 }

@@ -82,7 +82,8 @@
                 <label class="form-label" for="workcpf">CPF (Cadastro de Pessoa Física)</label>
 
                 <input type="text" class="form-control" id="workcpf" placeholder="123.456.789-10"
-                  oninput="mascaraCpf(this)" onblur="validarCPF(this)" maxlength="14" inputmode="numeric" required>
+                  oninput="mascaraCpf(this); validarCPF(this)" onblur="validarCPF(this)" maxlength="14"
+                  inputmode="numeric" required>
 
                 <div class="invalid-feedback" id="cpfFeedback"></div>
               </div>
@@ -91,7 +92,7 @@
                 <label class="form-label" for="volunteerCfp">CRP (Conselho Regional de Psicologia)</label>
 
                 <input type="text" class="form-control" id="volunteerCfp" placeholder="Ex.: CRP-06/123456"
-                  oninput="mascaraCRP(this)" onblur="validarCRP(this)" maxlength="13">
+                  oninput="mascaraCRP(this); validarCRP(this)" onblur="validarCRP(this)" maxlength="13">
 
                 <div class="invalid-feedback" id="crpFeedback"></div>
               </div>
@@ -104,9 +105,9 @@
               <div class="col-md-6">
                 <label class="form-label" for="workTel">Telefone</label>
                 <input type="tel" class="form-control" id="workTel" placeholder="(xx) xxxxx - xxxx"
-                  oninput="mascaraTelefone(this)" maxlength="14" required>
+                  oninput="mascaraTelefone(this)" maxlength="15" inputmode="numeric" required>
 
-                <div class="invalid-feedback">Por favor, insira um telefone válido.</div>
+                <div class="invalid-feedback">Informe um telefone com 11 números, incluindo o DDD.</div>
               </div>
               <div class="col-md-6">
                 <label class="form-label" for="esp">Possui especialização em alguma área?</label>
