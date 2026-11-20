@@ -39,6 +39,7 @@
       </div>
     </div>
   </nav>
+  
   <header class="page-header">
     <div class="container">
       <span class="tag-pill" style="background:rgba(255,255,255,0.1); color:#fff;">Ajuda</span>
@@ -131,17 +132,17 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Nome</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" placeholder="Seu nome" oninput="validarNome(this)" required>
                 <div class="invalid-feedback">Seu nome.</div>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" required>
+                <input type="email" class="form-control" placeholder="Ex.: seuemail@exemplo.com" required>
                 <div class="invalid-feedback">Por favor, insira um email válido.</div>
               </div>
               <div class="col-12">
                 <label class="form-label">Commentário</label>
-                <textarea class="form-control" rows="4" required></textarea>
+                <textarea class="form-control" rows="4" placeholder="Escreva seu comentário aqui" required></textarea>
                 <div class="invalid-feedback">Insira um comentário.</div>
               </div>
               <div class="col-12">

@@ -15,7 +15,7 @@
 </head>
 <body>
 <!-- NAVBAR -->
-   <nav class="navbar navbar-expand-lg navbar-nexora fixed-top page-header">
+   <nav class="navbar navbar-expand-lg navbar-nexora fixed-top">
     <div class="container">
     <a class="navbar-brand navbar-brand-custom" href="index.html" aria-label="Entre Nós home">
         <img src="img/logoEntreNos.png" alt="Entre Nós" class="navbar-logo">
@@ -41,7 +41,7 @@
   </nav>
   <header class="page-header">
     <div class="container">
-      <span class="tag-pill" style="background:rgba(255,255,255,0.1); color:#fff;">Ajuda</span>
+      <span class="tag-pill" style="background:rgba(255,255,255,0.1); color:#ffffff;">Ajuda</span>
       <h1 class="mb-3">Métodos para controlar sua ansiedade</h1>
       <div class="breadcrumb-custom">
         <a href="index.html">Home</a> <span>/</span> <a href="blog.html">Blog</a> <span>/</span> <span class="active">Artigo</span>
@@ -136,17 +136,17 @@
             <div class="row g-3">
               <div class="col-md-6">
                 <label class="form-label">Nome</label>
-                <input type="text" class="form-control" required>
+                <input type="text" class="form-control" placeholder="Seu nome" oninput="validarNome(this)" required>
                 <div class="invalid-feedback">Seu nome.</div>
               </div>
               <div class="col-md-6">
                 <label class="form-label">Email</label>
-                <input type="email" class="form-control" required>
+                <input type="email" class="form-control" placeholder="Ex.: seuemail@exemplo.com" required>
                 <div class="invalid-feedback">Por favor, insira um email válido.</div>
               </div>
               <div class="col-12">
                 <label class="form-label">Commentário</label>
-                <textarea class="form-control" rows="4" required></textarea>
+                <textarea class="form-control" rows="4" placeholder="Escreva seu comentário aqui" required></textarea>
                 <div class="invalid-feedback">Insira um comentário.</div>
               </div>
               <div class="col-12">
