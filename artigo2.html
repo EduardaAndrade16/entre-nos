@@ -55,7 +55,7 @@
       <div class="row g-5">
         <div class="col-lg-8 reveal">
           <div class="d-flex align-items-center gap-3 mb-4 pb-4 border-bottom">
-            <img src="https://i.pravatar.cc/56?img=8" class="rounded-circle" style="width:48px;height:48px;" alt="Daniel Hwang">
+            <img src="img/profissional1.jpg" class="rounded-circle" style="width:48px;height:48px;" alt="Daniel Hwang">
             <div>
               <div class="fw-bold text-navy">Prya Nair</div>
               <small class="text-slate-light">10 de Maio, 2026 · 5 minutos de leitura</small>
@@ -108,7 +108,7 @@
 
           <h3 class="mb-3">Quando buscar ajuda?</h3>
           <p class="mb-4">Se os ataques são frequentes, causam sofrimento ou levam a pessoa a evitar atividades do dia a dia, é hora de procurar um psiquiatra ou psicólogo. Como os sintomas do pânico podem lembrar os de problemas cardíacos, como dor no peito, é importante procurar atendimento médico quando for a primeira vez ou quando houver dúvida sobre a causa.<br>
-          Reconhecer que precisa de apoio é um ato de coragem. Entre as opções estão a consulta online com um psicólogo, a avaliação com um psiquiatra, que pode prescrever medicamentos se necessário, e os grupos de apoio e recursos disponíveis na internet. O EntreNós oferece uma ampla rede de profissionais e a praticidade do atendimento online, unindo conveniência e qualidade no cuidado com a sua saúde mental. Para maiores detalhes acesse: <a href="#" style="color: #554378; font-weight: bold;">Sinais de que é hora de procurar um psicólogo</a></p>
+          Reconhecer que precisa de apoio é um ato de coragem. Entre as opções estão a consulta online com um psicólogo, a avaliação com um psiquiatra, que pode prescrever medicamentos se necessário, e os grupos de apoio e recursos disponíveis na internet. O EntreNós oferece uma ampla rede de profissionais e a praticidade do atendimento online, unindo conveniência e qualidade no cuidado com a sua saúde mental. Para maiores detalhes acesse: <a href="artigo4.html" style="color: #554378; font-weight: bold;">Sinais de que é hora de procurar um psicólogo</a></p>
 
           <!-- Tags -->
           <div class="d-flex flex-wrap gap-2 mb-4 pt-3 border-top">
@@ -119,7 +119,7 @@
 
           <!-- Author box -->
           <div class="widget d-flex gap-3 align-items-center">
-            <img src="https://i.pravatar.cc/80?img=8" class="rounded-circle" style="width:64px;height:64px;" alt="Daniel Hwang headshot">
+            <img src="img/profissional1.jpg" class="rounded-circle" style="width:64px;height:64px;" alt="Daniel Hwang headshot">
             <div>
               <h5 class="mb-1">Prya Nair</h5>
               <p class="small mb-0">Psiquiátra e psicóloga.</p>
@@ -131,18 +131,20 @@
           <form class="needs-validation" novalidate>
             <div class="row g-3">
               <div class="col-md-6">
-                <label class="form-label">Nome</label>
-                <input type="text" class="form-control" placeholder="Seu nome" oninput="validarNome(this)" required>
-                <div class="invalid-feedback">Seu nome.</div>
+                <label class="form-label" for="art4">Nome completo</label>
+                <input type="text" class="form-control" id="art4"
+                       placeholder="Digite seu nome completo" oninput="validarNome(this)" required>
+                <div class="invalid-feedback">Informe seu nome completo.</div>
               </div>
               <div class="col-md-6">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-control" placeholder="Ex.: seuemail@exemplo.com" required>
+                <label class="form-label" for="art5">Email</label>
+                <input type="email" class="form-control" id="art5"
+                       placeholder="Ex.: seuemail@exemplo.com" required>
                 <div class="invalid-feedback">Por favor, insira um email válido.</div>
               </div>
               <div class="col-12">
-                <label class="form-label">Commentário</label>
-                <textarea class="form-control" rows="4" placeholder="Escreva seu comentário aqui" required></textarea>
+                <label class="form-label" for="art6">Comentário</label>
+                <textarea class="form-control" id="art6" rows="4" placeholder="Escreva seu comentário aqui" required></textarea>
                 <div class="invalid-feedback">Insira um comentário.</div>
               </div>
               <div class="col-12">
@@ -158,8 +160,8 @@
             <h5>Artigos Relacionados</h5>
             <ul class="widget-link-list">
               <li><a href="artigo1.html" class="text-decoration-none text-navy">Métodos para controlar sua ansiedade</a></li>
-              <li><a href="artigo1.html" class="text-decoration-none text-navy">Sinais de que é hora de procurar um psicólogo</a></li>
-              <li><a href="artigo1.html" class="text-decoration-none text-navy">Higiene do sono: como dormir melhor</a></li>
+              <li><a href="artigo4.html" class="text-decoration-none text-navy">Sinais de que é hora de procurar um psicólogo</a></li>
+              <li><a href="artigo3.html" class="text-decoration-none text-navy">Higiene do sono: como dormir melhor</a></li>
             </ul>
           </div>
           <div class="widget">
@@ -233,5 +235,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/validacoes.js"></script>
 </body>
 </html>
