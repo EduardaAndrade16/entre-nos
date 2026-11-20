@@ -56,36 +56,9 @@ function validarCPF(input) {
     return true;
 }
 
-
 function validarNome(input) {
     const nome = input.value.trim();
-    const feedback = document.getElementById("nomeFeedback");
-
-    input.classList.remove("is-invalid", "is-valid");
-
-    if (nome === "") {
-        feedback.textContent = "Por favor, insira seu nome completo.";
-        input.setCustomValidity(feedback.textContent);
-        input.classList.add("is-invalid");
-        return false;
-    }
-
-    if (!/^[A-Za-zÀ-ÿ\s]+$/.test(nome)) {
-        feedback.textContent = "O nome não pode conter números ou caracteres especiais.";
-        input.setCustomValidity(feedback.textContent);
-        input.classList.add("is-invalid");
-        return false;
-    }
-
-    feedback.textContent = "";
-    input.setCustomValidity("");
-    input.classList.add("is-valid");
-    return true;
-}
-
-function validarNome1(input) {
-    const nome = input.value.trim();
-    const feedback = document.getElementById("nomFeedback");
+    const feedback = input.nextElementSibling; 
 
     input.classList.remove("is-invalid", "is-valid");
 
